@@ -1,0 +1,464 @@
+﻿<resources>
+
+    <string name="app_name">CustomerCare</string>
+    <string name="action_settings">Configuraçoes</string>
+    <string name="title_activity_main_menu">Customer Care</string>
+
+    <!--VIEW(content_login.xml)-->
+    <string name="edit_login">nome de usuário</string>
+    <string name="edit_senha">senha</string>
+    <string name="button_logar">GO</string>
+    <string name="button_cad">Cadastre-se</string>
+    <string name="button_ajuda">Ajuda?</string>
+
+       <!--NOVO PADRÃO OK -->
+
+    <!--VIEW(item_metrica_list.xml)-->
+    <string name="txtListMetricaProprietario">Propietário: </string>
+    <string name="txtListMetricaNome">Nome da Métrica: </string>
+    <string name="txtListMetricaMeta">Nome da Meta: </string>
+    <string name="txtListMetricaTipo">Tipo de Registro: </string>
+
+    <!--VIEW(activity_metricas.xml)-->
+    <string name="btnMetricaInsert">Inserir</string>
+
+    <!--VIEW(activity_insert_metricas.xml)-->
+    <string name="txtInsMetricaTitleProgress">Progresso de Métrica</string>
+    <string name="edtInsMetricaNome">Nome</string>
+    <string name="edtInsMetricaDataInicio">Data Inicio</string>
+    <string name="edtInsMetricaDataVencimento">Data Vencimento</string>
+    <string name="edtInsMetricaValorAtual">Valor Atual</string>
+    <string name="edtInsMetricaValorInicial">Valor Inicial</string>
+    <string name="edtInsMetricaValorDestino">Valor de Destino</string>
+    <string name="edtInsMetricaComentario">Comentário</string>
+    <string name="edtInsMetricaDescricao">Descrição</string>
+    <string name="btnInsMetricaInsert">Inserir</string>
+
+    <!--VIEW(activity_update_metricas.xml)-->
+    <string name="txtUpdMetricaTitleProgress">Progresso de Métrica</string>
+    <string name="edtUpdMetricaNome">Nome</string>
+    <string name="edtUpdMetricaDataInicio">Data Inicio</string>
+    <string name="edtUpdMetricaDataVencimento">Data Vencimento</string>
+    <string name="edtUpdMetricaValorAtual">Valor Atual</string>
+    <string name="edtUpdMetricaValorInicial">Valor Inicial</string>
+    <string name="edtUpdMetricaValorDestino">Valor de Destino</string>
+    <string name="edtUpdMetricaComentario">Comentário</string>
+    <string name="edtUpdMetricaDescricao">Descriçao</string>
+    <string name="btnUpdMetricaInsert">Atualizar</string>
+
+    <!--VIEW(activity_view_metricas.xml)-->
+    <string name="txtViewMetricaTipo">Tipo do Registro:</string>
+    <string name="txtViewMetricaStatus">Status:</string>
+    <string name="txtViewMetricaNome">Nome:</string>
+    <string name="txtViewMetricaOwnerMeta">Responsável pela Meta:</string>
+    <string name="txtViewMetricaMeta">Meta:</string>
+    <string name="txtViewMetricaProgresso">Progresso:</string>
+    <string name="txtViewMetricaDataInicio">Data Inicio:</string>
+    <string name="txtViewMetricaDataVencimento">Data Vencimento:</string>
+    <string name="txtViewMetricaValorAtual">Valor Atual:</string>
+    <string name="txtViewMetricaTitleProgress">Progresso de Métrica</string>
+    <string name="txtViewMetricaValorInicial">Valor Inicial:</string>
+    <string name="txtViewMetricaValorDestino">Valor de Destino:</string>
+    <string name="txtViewMetricaComentario">Comentário:</string>
+    <string name="txtViewMetricaDescricao">Descriçao:</string>
+    <string name="btnViewMetricaExcluir">Excluir</string>
+    <string name="btnViewMetricaAtualizar">Atualizar</string>
+
+    <!--VIEW(item_campanha_list.xml)-->
+    <string name="txtListCampanhaProprietario">Propietário: </string>
+    <string name="txtListCampanhaNome">Nome da Camapanha: </string>
+    <string name="txtListCampanhaTipo">Tipo da Campanha: </string>
+    <string name="txtListCampanhaStatus">Status: </string>
+
+    <!--VIEW(activity_view_campanha.xml)-->
+    <string name="txtViewCampanhaProprietario">Proprietário: </string>
+    <string name="txtViewCampanhaNome">Nome: </string>
+    <string name="txtViewCampanhaAtivo">Ativo?: </string>
+    <string name="txtViewCampanhaTipo">Tipo: </string>
+    <string name="txtViewCampanhaStatus">Status: </string>
+    <string name="txtViewCampanhaDataInicio">Data de Início: </string>
+    <string name="txtViewCampanhaDataTermino">Data de Término: </string>
+    <string name="txtViewCampanhaReceitaEsperada">Receita Esperada: </string>
+    <string name="txtViewCampanhaCustoEstimado">Custo Estimado: </string>
+    <string name="txtViewCampanhaCustoReal">Custo Real: </string>
+    <string name="txtViewCampanhaRespostaEsperada">Resposta Esperada: </string>
+    <string name="txtViewCampanhaPai">Campanha Pai: </string>
+    <string name="txtViewCampanhaTotalLeads">Total de Leads: </string>
+    <string name="txtViewCampanhaTotalLeadsConvertidos">Total de Leads Convertidos: </string>
+    <string name="txtViewCampanhaTotalContatos">Total de Contatos: </string>
+    <string name="txtViewCampanhaValorTotalOportunidades">Valor Total de Oportunidades: </string>
+    <string name="txtViewCampanhaValorTotalOportunidadesGanhas">Valor Total de Oportunidades Ganhas: </string>
+
+    <!--VIEW(activity_tarefas.xml)-->
+    <string name="btnTarefaInserir">Inserir</string>
+
+    <!--VIEW(item_campanha_list.xml)-->
+    <string name="txtListTarefaProprietario">Atribuído a: </string>
+    <string name="txtListTarefaAssunto">Assunto: </string>
+    <string name="txtListTarefaDataVencimento">Data de Vencimento: </string>
+    <string name="txtListTarefaStatus">Status: </string>
+
+    <!--VIEW(activity_insert_tarefas.xml)-->
+    <string name="edtInsTarefaAssunto">Assunto</string>
+    <string name="edtInsTarefaDataVencimento">Data de Vencimento</string>
+    <string name="edtInsTarefaComentarios">Comentarios</string>
+    <string name="btnInsTarefaInsert">Inserir</string>
+
+    <!--VIEW(activity_view_tarefa.xml)-->
+    <string name="txtViewTarefaProprietario">Atribuído a: </string>
+    <string name="txtViewTarefaAssunto">Assunto: </string>
+    <string name="txtViewTarefaDataVencimento">Data de Vencimento: </string>
+    <string name="txtViewTarefaPrioridade">Prioridade: </string>
+    <string name="txtViewTarefaStatus">Status: </string>
+    <string name="txtViewTarefaNome">Nome: </string>
+    <string name="txtViewTarefaRelativo">Relativo a: </string>
+    <string name="txtViewTarefaComentario">Comentario: </string>
+    <string name="btnViewTarefaExcluir">Excluir</string>
+    <string name="btnViewTarefaAtualizar">Atualizar</string>
+
+    <!--VIEW(activity_update_tarefas.xml)-->
+    <string name="edtUpdTarefaAssunto">Assunto</string>
+    <string name="edtUpdTarefaDataVencimento">Data de Vencimento</string>
+    <string name="edtUpdTarefaComentarios">Comentarios</string>
+    <string name="btnUpdTarefaUpdate">Atualizar</string>
+
+    <!--VIEW(activity_oportunidades.xml)-->
+    <string name="btnOportunidadeInserir">Inserir</string>
+
+    <!--VIEW(item_oportunidade_list.xml)-->
+    <string name="txtListOportunidadeNome">Nome: </string>
+    <string name="txtListOportunidadeConta">Conta: </string>
+    <string name="txtListOportunidadeDataFechamento">Fechamento: </string>
+    <string name="txtListOportunidadeFase">Fase: </string>
+
+    <!--VIEW(activity_insert_oportunidades.xml)-->
+    <string name="edtInsOportunidadeNome">Nome </string>
+    <string name="edtInsOportunidadeValor">Valor ($) </string>
+    <string name="edtInsOportunidadeDataFechamento">Data Fechamento </string>
+    <string name="edtInsOportunidadeProxEtapa">Proxima Etapa </string>
+    <string name="edtInsOportunidadeProbabilidade">Probabilidade </string>
+    <string name="btnInsOportunidadeInsert">Inserir </string>
+
+    <!--VIEW(activity_view_oportunidade.xml)-->
+    <string name="txtViewOportunidadeNome">Nome: </string>
+    <string name="txtViewOportunidadeConta">Conta: </string>
+    <string name="txtViewOportunidadeTipo">Tipo: </string>
+    <string name="txtViewOportunidadeLead">Origem do Lead: </string>
+    <string name="txtViewOportunidadeValor">Valor: </string>
+    <string name="txtViewOportunidadeDataFechamento">Data Fechamento: </string>
+    <string name="txtViewOportunidadeProxEtapa">Próxima Etapa: </string>
+    <string name="txtViewOportunidadeFase">Fase: </string>
+    <string name="txtViewOportunidadeProbabilidade">Probabilidade (%): </string>
+    <string name="txtViewOportunidadeCampanha">Origem da campanha principal: </string>
+    <string name="btnViewOportunidadeExcluir">Excluir</string>
+    <string name="btnViewOportunidadeAtualizar">Atualizar</string>
+
+    <!--VIEW(activity_update_oportunidades.xml)-->
+    <string name="edtUpdOportunidadeNome">Nome </string>
+    <string name="edtUpdOportunidadeValor">Valor ($) </string>
+    <string name="edtUpdOportunidadeDataFechamento">Data Fechamento </string>
+    <string name="edtUpdOportunidadeProxEtapa">Proxima Etapa </string>
+    <string name="edtUpdOportunidadeProbabilidade">Probabilidade </string>
+    <string name="btnUpdOportunidadeUpdate">Atualizar </string>
+
+    <!--VIEW(activity_insert_contas.xml)-->
+    <string name="edtInsContaNome">Nome</string>
+    <string name="edtInsContaTelefone">Telefone</string>
+    <string name="edtInsContaSetor">Setor</string>
+    <string name="edtInsContaOrigem">Origem</string>
+    <string name="edtInsContaReceita">Receita</string>
+    <string name="edtInsContaFuncionarios">Funcionarios</string>
+    <string name="edtInsContaEndereco">Endereço de Cobrança</string>
+    <string name="btnInsContaInsert">Cadastrar Conta</string>
+
+    <!--VIEW(activity_view_contas.xml)-->
+    <string name="txtViewContaPropietario">Propietario: </string>
+    <string name="txtViewContaNome">Nome: </string>
+    <string name="txtViewContaClassificao">Classificação: </string>
+    <string name="txtViewContaOrigem">Origem: </string>
+    <string name="txtViewContaTelefone">Telefone: </string>
+    <string name="txtViewContaSetor">Setor: </string>
+    <string name="txtViewContaTipo">Tipo: </string>
+    <string name="txtViewContaReceita">Receita Anual: </string>
+    <string name="txtViewContaFuncionarios">Funcionarios: </string>
+    <string name="txtViewContaEndereco">Endereço: </string>
+    <string name="btnViewContaExcluir">Excluir</string>
+    <string name="btnViewContaAtualizar">Atualizar</string>
+
+    <!--VIEW(activity_update_contas.xml)-->
+    <string name="edtUpdContaNome">Nome</string>
+    <string name="edtUpdContaTelefone">Telefone</string>
+    <string name="edtUpdContaSetor">Setor</string>
+    <string name="edtUpdContaOrigem">Origem</string>
+    <string name="edtUpdContaReceita">Receita</string>
+    <string name="edtUpdContaFuncionarios">Funcionarios</string>
+    <string name="edtUpdContaEndereco">Endereço de Cobrança</string>
+    <string name="btnUpdContaUpdate">Atualizar</string>
+
+    <!--VIEW(activity_contas.xml)-->
+    <string name="btnContaInserir">Inserir</string>
+
+    <!--VIEW(item_conta_list.xml)-->
+    <string name="txtListContaPropietario">Propietário</string>
+    <string name="txtListContaNome">Nome</string>
+    <string name="txtListContaClassificacao">Classificação</string>
+
+    <!--VIEW(activity_insert_leads.xml)-->
+    <string name="edtInsLeadNome">Nome</string>
+    <string name="edtInsLeadSobrenome">Sobrenome</string>
+    <string name="edtInsLeadEmpresa">Empresa</string>
+    <string name="edtInsLeadOrigem">Origem</string>
+    <string name="edtInsLeadSetor">Setor</string>
+    <string name="edtInsLeadReceita">Receita</string>
+    <string name="edtInsLeadTelefone">Telefone</string>
+    <string name="edtInsLeadEmail">Email</string>
+    <string name="edtInsLeadFuncionarios">Funcionarios</string>
+    <string name="edtInsLeadEndereco">Endereço</string>
+    <string name="btnInsLeadInsert">Cadastrar Lead</string>
+
+    <!--VIEW(activity_view_leads.xml)-->
+    <string name="txtViewLeadNome">Nome: </string>
+    <string name="txtViewLeadEmpresa">Empresa: </string>
+    <string name="txtViewLeadOrigem">Origem: </string>
+    <string name="txtViewLeadSetor">Setor: </string>
+    <string name="txtViewLeadReceita">Receita: </string>
+    <string name="txtViewLeadTelefone">Telefone: </string>
+    <string name="txtViewLeadEmail">Email: </string>
+    <string name="txtViewLeadStatus">Status: </string>
+    <string name="txtViewLeadClassificacao">Classificação: </string>
+    <string name="txtViewLeadFuncionarios">Funcionários: </string>
+    <string name="txtViewLeadEndereco">Endereço: </string>
+    <string name="btnViewLeadExcluir">Excluir</string>
+    <string name="btnViewLeadConverter">Converter</string>
+    <string name="btnViewLeadAtualizar">Atualizar</string>
+
+    <!--VIEW(activity_update_leads.xml)-->
+    <string name="edtUpdLeadNome">Nome</string>
+    <string name="edtUpdLeadSobrenome">Sobrenome</string>
+    <string name="edtUpdLeadEmpresa">Empresa</string>
+    <string name="edtUpdLeadOrigem">Origem</string>
+    <string name="edtUpdLeadSetor">Setor</string>
+    <string name="edtUpdLeadReceita">Receita</string>
+    <string name="edtUpdLeadTelefone">Telefone</string>
+    <string name="edtUpdLeadEmail">Email</string>
+    <string name="edtUpdLeadFuncionarios">Funcionarios</string>
+    <string name="edtUpdLeadEndereco">Endereço</string>
+    <string name="btnUpdLeadUpdate">Atualizar</string>
+
+    <!--VIEW(activity_convert_leads.xml)-->
+    <string name="txtConvLeadProprietario">Propietário do Lead</string>
+    <string name="chkConvLeadOportunidade">Não gerar Oportunidade</string>
+    <string name="edtConvLeadOportunidadeNome">Nome da oportunidade</string>
+    <string name="btnConvLeadConvert">Converter</string>
+
+    <!--VIEW(activity_leads.xml)-->
+    <string name="btnLeadInsert">Inserir</string>
+
+    <!--VIEW(item_lead_list.xml)-->
+    <string name="txtListLeadNome">Nome</string>
+    <string name="txtListLeadEmpresa">Empresa</string>
+    <string name="txtListLeadClassificacao">Classificação</string>
+
+    <!--VIEW(activity_vendas.xml)-->
+    <string name="btnVendasTotalOportunidades">Total Oportunidades</string>
+    <string name="btnVendasPipeline">Pipeline</string>
+    <string name="btnVendasGanhosPerdasS">Ganhos e Perdas Semanal</string>
+    <string name="btnVendasGanhosPerdasM">Ganhos e Perdas Mensal</string>
+
+    <!--VIEW(item_contacts_list.xml)-->
+    <string name="txtListContatoNome">Nome do Contato</string>
+    <string name="txtListContatoConta">Conta</string>
+    <string name="txtListContatoTelefone">Telefone</string>
+
+    <!--VIEW(activity_contacts.xml)-->
+    <string name="btnContatoInserir">Inserir</string>
+
+    <!--VIEW(activity_insert_contato.xml)-->
+    <string name="edtInsContatoNome">Primeiro nome</string>
+    <string name="edtInsContatoSobrenome">Sobrenome</string>
+    <string name="edtInsContatoConta">Conta</string>
+    <string name="edtInsContatoTelefone">Telefone</string>
+    <string name="edtInsContatoCelular">Celular</string>
+    <string name="edtInsContatoEmail">Email</string>
+    <string name="edtInsContatoTitulo">Titulo</string>
+    <string name="btnInsContatoInserir">Cadastrar Contato</string>
+
+    <!--VIEW(activity_view_contacts.xml)-->
+    <string name="txtViewContatoPropietario">Propietario: </string>
+    <string name="txtViewContatoNome">Nome: </string>
+    <string name="txtViewContatoConta">Conta: </string>
+    <string name="txtViewContatoTelefone">Telefone: </string>
+    <string name="txtViewContatoCelular">Celular: </string>
+    <string name="txtViewContatoEmail">Email: </string>
+    <string name="txtViewContatoTitulo">Titulo: </string>
+    <string name="btnViewContatoDeletar">Deletar</string>
+    <string name="btnViewContatoAtualizar">Atualizar</string>
+
+    <!--VIEW(activity_update_contacts.xml)-->
+    <string name="edtUpdContatoNome">Primeiro nome</string>
+    <string name="edtUpdContatoSobrenome">Sobrenome</string>
+    <string name="edtUpdContatoConta">Conta</string>
+    <string name="edtUpdContatoTelefone">Telefone</string>
+    <string name="edtUpdContatoCelular">Celular</string>
+    <string name="edtUpdContatoEmail">Email</string>
+    <string name="edtUpdContatoTitulo">Titulo</string>
+    <string name="btnUpdContatoUpdate">Atualizar Contato</string>
+
+
+
+
+
+
+
+        <!--VIEW(content_main_menu.xml)-->
+        <string name="button_lead">Leads</string>
+        <string name="button_conta">Conta</string>
+        <string name="button_contato">Contato</string>
+        <string name="button_oportunidade">Oportunidade</string>
+        <string name="button_campanha">Campanha</string>
+        <string name="button_metas">Metas</string>
+        <string name="button_servicos">Serviços</string>
+        <string name="button_vendas">Vendas</string>
+        <string name="button_tarefas">Tarefas</string>
+        <string name="button_visitas">Visitas</string>
+        <string name="button_logout">Logout</string>
+
+        <!--VIEW(activity_insert_leads.xml)-->
+        <string name="edit_fNameLead">Primeiro nome</string>
+        <string name="edit_lNameLead">Sobrenome</string>
+        <string name="edit_companyLead">Empresa</string>
+        <string name="button_createLead">Cadastrar Lead</string>
+
+        <!--VIEW(activity_view_leads.xml)-->
+        <string name="lb_fNameLead">Nome</string>
+        <string name="lb_lNameLead">Sobrenome</string>
+        <string name="lb_companyLead">Empresa</string>
+        <string name="button_deleteLead">Excluir</string>
+        <string name="button_convertLead">Converter</string>
+        <string name="button_updateLead">Atualizar</string>
+
+        <!--VIEW(activity_convert_leads.xml)-->
+        <string name="text_ownerConvert">Propietário do Lead</string>
+        <string name="spinner_accountConvert">Selecionar Conta</string>
+        <string name="check_opportunityConvert">Não gerar Oportunidade</string>
+        <string name="edit_nameOpportunityConvert">Nome da oportunidade</string>
+        <string name="button_convert">Converter</string>
+
+        <!--VIEW(activity_update_leads.xml)-->
+        <string name="edit_upFNameLead">Primeiro nome</string>
+        <string name="edit_upLNameLead">Sobrenome</string>
+        <string name="edit_upCompanyLead">Empresa</string>
+
+        <!--VIEW(activity_leads.xml)-->
+        <string name="button_inserirLead">Inserir</string>
+
+        <!--VIEW(item_lead_list.xml)-->
+        <string name="text_fNameLead">Primeiro nome</string>
+        <string name="text_lNameLead">Sobrenome</string>
+        <string name="text_companyLead">Empresa</string>
+
+        <!--VIEW(spinner_layout.xml)-->
+
+        <!--VIEW(activity_contas.xml)-->
+        <string name="button_inserirConta">Inserir</string>
+
+        <!--VIEW(item_conta_list.xml)-->
+        <string name="text_nPropConta">Proprietário da Conta</string>
+        <string name="text_nConta">Nome da Conta</string>
+
+        <!--VIEW(activity_insert_conta.xml)-->
+        <string name="text_IncNomeConta">Insira o Nome da Conta</string>
+        <string name="button_CreateConta">Cadastrar Conta</string>
+
+        <!--VIEW(activity_view_contas.xml)-->
+        <string name="lb_PropConta">Propietário: </string>
+        <string name="lb_NomeConta">Nome: </string>
+        <string name="button_deleteConta">Excluir</string>
+        <string name="button_updateConta">Atualizar</string>
+
+        <!--VIEW(activity_contacts.xml)-->
+        <string name="button_inserirContato">Inserir</string>
+
+        <!--VIEW(item_contacts_list.xml)-->
+        <string name="text_nameContact">Nome do Contato</string>
+        <string name="text_accountContact">Conta</string>
+
+        <!--VIEW(activity_view_contacts.xml)-->
+        <string name="text_fNameContact">Nome</string>
+        <string name="text_lNameContact">Sobrenome</string>
+        <string name="button_deleteContact">Deletar</string>
+        <string name="button_updateContact">Atualizar</string>
+
+        <!--VIEW(activity_insert_contato.xml)-->
+        <string name="edit_fNameContato">Primeiro nome</string>
+        <string name="edit_lNameContato">Sobrenome</string>
+        <string name="edit_accountContato">Conta</string>
+        <string name="button_createContato">Cadastrar Contato</string>
+
+        <!--VIEW(activity_update_contacts.xml)-->
+        <string name="edit_upFNameContact">Primeiro nome</string>
+        <string name="edit_upLNameContact">Sobrenome</string>
+        <string name="edit_upAccountContact">Conta</string>
+
+
+        <!-- Teste -->
+        <string name="edit_message">Escreva uma mensagem</string>
+        <string name="button_send">Envie</string>
+        <string name="title_activity_main">Atividade Principal</string>
+
+
+
+
+        <string name="title_home">INÍCIO</string>
+        <string name="title_videos">VIDEOS</string>
+        <string name="title_coupens">VENDAS</string>
+        <string name="title_offers">OFERTAS</string>
+        <string name="title_extraearning">EXTRAEARNING</string>
+        <string name="title_usemoney">OPORTUNIDADES</string>
+        <string name="title_ranking">RANKING</string>
+        <string name="title_faq">FAQ</string>
+        <string name="title_signout">SAIR</string>
+        <string name="action_search">Pesquisar</string>
+        <string name="drawer_open">Abrir</string>
+        <string name="drawer_close">Fechar</string>
+
+        <string name="navigation_drawer_open">Open navigation drawer</string>
+        <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
+        <string name="nav_item_home">Início</string>
+        <string name="nav_item_friends">Amigos</string>
+        <string name="nav_item_notifications">Mensagens</string>
+
+
+        <!-- navigation drawer item labels  -->
+        <string-array name="nav_drawer_labels">
+            <item>@string/title_home</item>
+            <item>@string/title_videos</item>
+            <item>@string/title_coupens</item>
+            <item>@string/title_offers</item>
+            <item>@string/title_extraearning</item>
+            <item>@string/title_usemoney</item>
+            <item>@string/title_ranking</item>
+            <item>@string/title_faq</item>
+            <item>@string/title_signout</item>
+
+        </string-array>
+
+        <string-array name="nav_drawer_labels1">
+            <item>@string/title_home</item>
+            <item>@string/title_videos</item>
+            <item>@string/title_coupens</item>
+            <item>@string/title_offers</item>
+            <item>@string/title_extraearning</item>
+            <item>@string/title_usemoney</item>
+            <item>@string/title_ranking</item>
+            <item>@string/title_faq</item>
+            <item>@string/title_signout</item>
+
+
+        </string-array>
+
+
+
+</resources>

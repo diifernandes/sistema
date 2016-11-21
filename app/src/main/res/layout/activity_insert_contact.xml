@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="br.customercare.tcc.view.controller.InsertContatoActivity">
+
+    <EditText
+        android:id="@+id/edtInsContatoNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/edtInsContatoNome"
+        android:layout_gravity="left"/>
+
+    <EditText
+        android:id="@+id/edtInsContatoSobrenome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/edtInsContatoSobrenome"
+        android:layout_gravity="left"/>
+
+    <EditText
+        android:id="@+id/edtInsContatoConta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/edtInsContatoConta"
+        android:onClick="listAccounts"
+        android:layout_gravity="left"/>
+
+    <EditText
+        android:id="@+id/edtInsContatoTelefone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/edtInsContatoTelefone"
+        android:inputType="number"
+        android:layout_gravity="left"/>
+
+    <EditText
+        android:id="@+id/edtInsContatoCelular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/edtInsContatoCelular"
+        android:inputType="number"
+        android:layout_gravity="left"/>
+
+    <EditText
+        android:id="@+id/edtInsContatoEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/edtInsContatoEmail"
+        android:layout_gravity="left"/>
+
+    <EditText
+        android:id="@+id/edtInsContatoTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/edtInsContatoTitulo"
+        android:layout_gravity="left"/>
+
+    <Button
+        android:id="@+id/btnInsContatoInserir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnInsContatoInserir"
+        android:onClick="insertContato"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.customercare.tcc" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        >
+
+        <activity
+            android:name=".view.controller.LoginActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.controller.MainMenuActivity"
+            android:label="@string/title_activity_main_menu"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+
+        <activity android:name=".view.controller.InsertLeadActivity" >
+        </activity>
+        <activity android:name=".view.controller.LeadsActivity">
+        </activity>
+        <activity android:name=".view.controller.UpdateLeadActivity" >
+        </activity>
+        <activity android:name=".view.controller.ViewLeadActivity" >
+        </activity>
+        <activity android:name=".view.controller.ConvertLeadActivity" >
+        </activity>
+
+
+        <activity android:name=".view.controller.ContasActivity">
+        </activity>
+        <activity android:name=".view.controller.UpdateContasActivity">
+        </activity>
+        <activity android:name=".view.controller.InsertContasActivity">
+        </activity>
+        <activity android:name=".view.controller.ViewContaActivity">
+        </activity>
+
+        <activity android:name=".view.controller.MetricasActivity" >
+        </activity>
+        <activity android:name=".view.controller.ViewMetricasActivity">
+        </activity>
+        <activity android:name=".view.controller.InsertMetricasActivity">
+        </activity>
+        <activity android:name=".view.controller.UpdateMetricasActivity">
+        </activity>
+
+        <activity android:name=".view.controller.ContatosActivity">
+        </activity>
+        <activity android:name=".view.controller.ViewContatoActivity">
+        </activity>
+        <activity android:name=".view.controller.InsertContatoActivity">
+        </activity>
+        <activity android:name=".view.controller.ListInsertContasToContatoActivity">
+        </activity>
+        <activity android:name=".view.controller.UpdateContactActivity" >
+        </activity>
+
+        <activity android:name=".view.controller.CampanhasActivity" >
+        </activity>
+        <activity android:name=".view.controller.ViewCampanhaActivity">
+        </activity>
+
+        <activity android:name=".view.controller.TarefasActivity" >
+        </activity>
+        <activity android:name=".view.controller.InsertTarefasActivity">
+        </activity>
+        <activity android:name=".view.controller.ViewTarefaActivity">
+        </activity>
+        <activity android:name=".view.controller.UpdateTarefasActivity" >
+        </activity>
+
+        <activity android:name=".view.controller.OportunidadesActivity" >
+        </activity>
+        <activity android:name=".view.controller.InsertOportunidadesActivity" >
+        </activity>
+        <activity android:name=".view.controller.ViewOportunidadeActivity" >
+        </activity>
+        <activity android:name=".view.controller.UpdateOportunidadesActivity" >
+        </activity>
+
+        <activity android:name=".view.controller.VendasActivity" >
+        </activity>
+        <activity android:name=".view.controller.VendasTotalOppActivity" >
+        </activity>
+        <activity android:name=".view.controller.VendasPipelineActivity" >
+        </activity>
+        <activity android:name=".view.controller.VendasGanhosPerdasSemanalActivity" >
+        </activity>
+        <activity android:name=".view.controller.VendasGanhosPerdasMensalActivity" >
+        </activity>
+
+    </application>
+
+</manifest>

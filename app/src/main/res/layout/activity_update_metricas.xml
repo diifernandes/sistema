@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.controller.InsertUpdateActivity">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spiUpdMetricaTipoRegistro"
+            android:spinnerMode="dialog"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spiUpdMetricaMeta"
+            android:spinnerMode="dialog" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spiUpdMetricaStatus"
+            android:spinnerMode="dialog" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayoutUpdMetrica">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/edtUpdMetricaNome"
+                android:hint="@string/edtUpdMetricaNome"
+                android:layout_gravity="left"
+                />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/edtUpdMetricaDataInicio"
+                android:hint="@string/edtUpdMetricaDataInicio"
+                android:inputType="number"
+                android:layout_gravity="left"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/edtUpdMetricaDataVencimento"
+                android:hint="@string/edtUpdMetricaDataVencimento"
+                android:inputType="number"
+                android:layout_gravity="left"/>
+
+            <EditText
+                android:id="@+id/edtUpdMetricaDescricao"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:hint="@string/edtUpdMetricaDescricao"
+                android:layout_gravity="left"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txtUpdMetricaTitleProgress"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:id="@+id/txtUpdMetricaTitleProgress"/>
+
+            <EditText
+                android:id="@+id/edtUpdMetricaValorAtual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/edtUpdMetricaValorAtual"
+                android:inputType="numberDecimal"
+                android:layout_gravity="left"/>
+
+            <EditText
+                android:id="@+id/edtUpdMetricaValorInicial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/edtUpdMetricaValorInicial"
+                android:inputType="numberDecimal"
+                android:layout_gravity="left"/>
+
+            <EditText
+                android:id="@+id/edtUpdMetricaValorDestino"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/edtUpdMetricaValorDestino"
+                android:inputType="numberDecimal"
+                android:layout_gravity="left"/>
+
+            <EditText
+                android:id="@+id/edtUpdMetricaComentario"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:hint="@string/edtUpdMetricaComentario"
+                android:layout_gravity="left"/>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnUpdMetricaInsert"
+            android:id="@+id/btnUpdMetricaInsert"
+            android:onClick="updateMetrica"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+</ScrollView>

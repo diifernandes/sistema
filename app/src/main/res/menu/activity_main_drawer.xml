@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/nav_leads" android:icon="@android:drawable/ic_menu_crop"
+            android:title="Leads" />
+        <item android:id="@+id/nav_contas" android:icon="@android:drawable/ic_menu_crop"
+            android:title="Contas" />
+        <item android:id="@+id/nav_contatos" android:icon="@android:drawable/ic_menu_slideshow"
+            android:title="Contatos" />
+        <item android:id="@+id/nav_opps" android:icon="@android:drawable/ic_menu_manage"
+            android:title="Oportunidades" />
+        <item android:id="@+id/nav_camp" android:icon="@android:drawable/ic_menu_manage"
+            android:title="Campanhas" />
+    </group>
+
+    <item android:title="Realize">
+        <menu>
+            <item android:id="@+id/nav_jobs" android:icon="@android:drawable/ic_menu_share"
+                android:title="Metas" />
+            <item android:id="@+id/nav_sales" android:icon="@android:drawable/ic_menu_manage"
+                android:title="Vendas" />
+            <item android:id="@+id/nav_tasks" android:icon="@android:drawable/ic_menu_manage"
+                android:title="Tarefas" />
+            <item android:id="@+id/nav_visits" android:icon="@android:drawable/ic_menu_manage"
+                android:title="Visitas" />
+        </menu>
+    </item>
+    <item android:title="Configurações">
+        <menu>
+            <item android:id="@+id/nav_ajustes" android:icon="@android:drawable/ic_menu_preferences"
+                android:title="Ajustes" />
+            <item android:id="@+id/nav_feedback" android:icon="@android:drawable/ic_menu_info_details"
+                android:title="Dê seu feedback" />
+            <item android:id="@+id/nav_help" android:icon="@android:drawable/ic_menu_help"
+                android:title="Ajuda" />
+            <item android:id="@+id/nav_logout" android:icon="@android:drawable/ic_menu_info_details"
+                android:title="Sair" />
+        </menu>
+    </item>
+
+</menu>
