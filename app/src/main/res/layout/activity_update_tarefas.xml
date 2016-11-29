@@ -1,42 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.controller.UpdateTarefasActivity">
-    <LinearLayout
-        android:orientation="vertical"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="br.customercare.tcc.view.controller.UpdateTarefasActivity">
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:id="@+id/linearLayoutUpdTarefa">
+        android:layout_marginTop="50dp"
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:id="@+id/linearLayoutUpdTarefa"
+            >
 
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:id="@+id/edtUpdTarefaAssunto"
             android:hint="@string/edtUpdTarefaAssunto"
             android:layout_gravity="left"/>
 
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:id="@+id/edtUpdTarefaDataVencimento"
             android:hint="@string/edtUpdTarefaDataVencimento"
             android:inputType="number"
             android:layout_gravity="left"/>
 
-        <Spinner
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Prioridade"/>
+            <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/spiUpdTarefaPrioridade"
             android:spinnerMode="dialog"/>
 
-        <Spinner
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Status"/>
+            <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/spiUpdTarefaStatus"
@@ -44,43 +65,61 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/txtUpdTarefaQuem"
             android:layout_marginLeft="10dp"
             android:textSize="20sp"
             android:layout_gravity="left"/>
 
-        <Spinner
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Atribuido à"/>
+            <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/spiUpdTarefaQuemNome"
             android:spinnerMode="dialog" />
 
-        <Spinner
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Objeto a ser relacionado"/>
+            <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/spiUpdTarefaRelativo"
             android:spinnerMode="dialog" />
 
-        <Spinner
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Relativo à"/>
+            <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/spiUpdTarefaRelativoObjeto"
             android:spinnerMode="dialog" />
 
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:id="@+id/edtUpdTarefaComentario"
             android:hint="@string/edtUpdTarefaComentarios"
             android:layout_gravity="left"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/btnUpdTarefaUpdate"
-            android:id="@+id/btnUpdTarefaUpdate"
-            android:onClick="updateTarefa"
-            android:layout_gravity="center_horizontal"/>
-    </LinearLayout>
-</ScrollView>
+                  <Button
+                android:id="@+id/btnUpdTarefaUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/btnUpdTarefaUpdate"
+                android:onClick="updateTarefa"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/colorPrimary"
+                android:layout_marginTop="20dp"
+                android:textColor="#FFFFFF"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

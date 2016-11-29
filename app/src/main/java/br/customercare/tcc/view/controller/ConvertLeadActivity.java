@@ -24,7 +24,7 @@ import br.customercare.tcc.util.leads.ConsultOneLead;
 import br.customercare.tcc.util.leads.ConsultOwnerLead;
 import br.customercare.tcc.util.leads.ConvertLead;
 
-public class ConvertLeadActivity extends AppCompatActivity {
+public class ConvertLeadActivity extends BaseDrawerActivity {
 
     private User[] ownerLead;
     private Lead[] lead;
@@ -38,8 +38,8 @@ public class ConvertLeadActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_convert_lead);
-
+        //setContentView(R.layout.activity_convert_lead);
+        getLayoutInflater().inflate(R.layout.activity_convert_lead, frameLayout);
         checkBox = (CheckBox)findViewById(R.id.chkConvLeadOportunidade);
         editOpportunity = (EditText)findViewById(R.id.edtConvLeadOportunidadeNome);
         txtPropetario = (TextView)findViewById(R.id.txtConvLeadProprietario);

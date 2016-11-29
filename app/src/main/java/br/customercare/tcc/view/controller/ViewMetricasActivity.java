@@ -1,6 +1,7 @@
 package br.customercare.tcc.view.controller;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,9 +9,12 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
 import com.sforce.soap.enterprise.sobject.Metric;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -23,7 +27,7 @@ import br.customercare.tcc.util.metas.ConsultOneMetrica;
 import br.customercare.tcc.util.metas.ConsultOwnerMeta;
 import br.customercare.tcc.util.metas.DeleteMetrica;
 
-public class ViewMetricasActivity extends AppCompatActivity {
+public class ViewMetricasActivity extends BaseDrawerActivity {
 
     private String[] statusNomes = new String[]{"Não iniciado","Em andamento", "Atrasado", "Crítico", "Concluída",
             "Adiado", "Cancelado", "Não concluído"};
@@ -43,11 +47,18 @@ public class ViewMetricasActivity extends AppCompatActivity {
     private Metric[] metrica = new Metric[1];
     public final static String EXTRA_ID = "br.customercare.tcc.view.controller.ID";
 
+    private FloatingActionMenu menuRed;
+    private FloatingActionButton fab1;
+    private FloatingActionButton fab2;
+    private FloatingActionButton fab3;
+    private List<FloatingActionMenu> menus = new ArrayList<>();
+    private Handler mUiHandler = new Handler();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_metricas);
-
+        //setContentView(R.layout.activity_view_metricas);
+        getLayoutInflater().inflate(R.layout.activity_view_metricas, frameLayout);
         principalLayout = (LinearLayout)findViewById(R.id.linearLayoutViewMetrica);
 
         textNome = (TextView)findViewById(R.id.txtViewMetricaValueNome);
@@ -94,8 +105,61 @@ public class ViewMetricasActivity extends AppCompatActivity {
         }
         carregaValores(metrica[0].getRecordType().getName());
 
+        menuRed = (FloatingActionMenu) findViewById(R.id.menu_red);
+        fab1 = (FloatingActionButton) findViewById(R.id.fab1);
+        fab2 = (FloatingActionButton) findViewById(R.id.fab2);
+
+
+
+        fab1.setEnabled(true);
+        fab2.setEnabled(true);
+
+        menuRed.setClosedOnTouchOutside(true);
+        //menuDown.hideMenuButton(false);
+        menuRed.hideMenuButton(false);
+        menus.add(menuRed);
+        fab1.setOnClickListener(clickListener);
+        fab2.setOnClickListener(clickListener);
+
+
+        int delay = 400;
+        for (final FloatingActionMenu menu : menus) {
+            mUiHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    menu.showMenuButton(true);
+                }
+            }, delay);
+            delay += 150;
+        }
+
+        menuRed.setOnMenuButtonClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (menuRed.isOpened()) {
+                    //Toast.makeText(getActivity(), menuRed.getMenuButtonLabelText(), Toast.LENGTH_SHORT).show();
+                }
+
+                menuRed.toggle(true);
+            }
+        });
+
     }
 
+    private View.OnClickListener clickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.fab1:
+                    updateMetrica(v);
+                    break;
+                case R.id.fab2:
+                    deleteMetrica(v);
+                    break;
+
+            }
+        }
+    };
     public void deleteMetrica(View view){
         DeleteMetrica delMeta = new DeleteMetrica(this);
         delMeta.execute(metrica[0].getId());

@@ -31,7 +31,7 @@ public class LogoutSF extends AsyncTask<String, String, Boolean> {
 
     @Override
     protected Boolean doInBackground(String... params) {
-        publishProgress("Executando ação...");
+        publishProgress("Efetuando logout...");
         boolean desconecta = Conexao.desconectaSF();
         return desconecta;
     }

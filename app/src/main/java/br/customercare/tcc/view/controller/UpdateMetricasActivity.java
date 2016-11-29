@@ -29,7 +29,7 @@ import br.customercare.tcc.util.metas.GoalSpinnerAdapter;
 import br.customercare.tcc.util.metas.RecordSpinnerAdapter;
 import br.customercare.tcc.util.metas.UpdateMetrica;
 
-public class UpdateMetricasActivity extends AppCompatActivity {
+public class UpdateMetricasActivity extends BaseDrawerActivity {
 
     private String[] statusNomes = new String[]{"Não iniciado","Em andamento", "Atrasado", "Crítico", "Concluída",
             "Adiado", "Cancelado", "Não concluído"};
@@ -52,8 +52,8 @@ public class UpdateMetricasActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_update_metricas);
-
+        //setContentView(R.layout.activity_update_metricas);
+        getLayoutInflater().inflate(R.layout.activity_update_metricas, frameLayout);
         ArrayAdapter<String> adapterStatus = new ArrayAdapter<String>(this, R.layout.spinner_layout, R.id.text_spinner, statusNomes);
         adapterStatus.setDropDownViewResource(R.layout.spinner_layout);
 

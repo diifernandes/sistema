@@ -94,20 +94,7 @@ public class MainMenuActivity extends AppCompatActivity implements NavigationVie
         logoutSF.execute();
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -146,7 +133,7 @@ public class MainMenuActivity extends AppCompatActivity implements NavigationVie
             Intent leadIntent = new Intent(this, TarefasActivity.class);
             startActivity(leadIntent);
         } else if (id == R.id.nav_visits) {
-            Intent leadIntent = new Intent(this, TarefasActivity.class);
+            Intent leadIntent = new Intent(this, VisitasActivity.class);
             startActivity(leadIntent);
         } else if (id == R.id.nav_ajustes) {
             //

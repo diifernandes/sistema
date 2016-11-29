@@ -16,14 +16,14 @@ import br.customercare.tcc.R;
 import br.customercare.tcc.util.campanha.CampanhasListAdapter;
 import br.customercare.tcc.util.campanha.ListCampanhas;
 
-public class CampanhasActivity extends AppCompatActivity {
+public class CampanhasActivity extends BaseDrawerActivity {
 
     public final static String EXTRA_ID = "br.customercare.tcc.view.controller.ID";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_campanhas);
-
+        //setContentView(R.layout.activity_campanhas);
+        getLayoutInflater().inflate(R.layout.activity_campanhas, frameLayout);
         ListView lvCampanhas = (ListView)findViewById(R.id.listView_Campanhas);
 
         ArrayList<Campaign> campanha = new ArrayList<Campaign>();

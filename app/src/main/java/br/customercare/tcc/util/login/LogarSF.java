@@ -24,15 +24,15 @@ public class LogarSF extends AsyncTask<String, String, Boolean> {
     @Override
     protected void onPreExecute() {
         progress = new ProgressDialog(context);
-        progress.setMessage("Verificando Dados");
+        progress.setMessage("Autenticando dados");
         progress.show();
     }
 
     @Override
     protected Boolean doInBackground(String... params) {
-        publishProgress("Verificando...");
+        publishProgress("Autenticando...");
         boolean conecta = Conexao.conectaSF(params[0], params[1]);
-        publishProgress("Dados Verificados...");
+        publishProgress("Dados verificados...");
         return conecta;
     }
 
@@ -46,7 +46,7 @@ public class LogarSF extends AsyncTask<String, String, Boolean> {
         if (params == false) {
             alert = new AlertDialog.Builder(context);
             alert.setTitle("Atenção");
-            alert.setMessage("Dados invalidos");
+            alert.setMessage("Dados inválidos");
             alert.setNeutralButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {

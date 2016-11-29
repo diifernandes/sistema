@@ -10,9 +10,19 @@
     android:paddingBottom="16dp"
     tools:context=".view.controller.ListInsertContasToContatoActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textContaContato"
+        android:layout_marginTop="50dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        />
     <ListView
         android:id="@+id/listView_contas"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:layout_marginTop="10dp"
+        />
 </LinearLayout>

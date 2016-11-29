@@ -12,7 +12,7 @@ import br.customercare.tcc.R;
 import br.customercare.tcc.util.Mask;
 import br.customercare.tcc.util.conta.InsertConta;
 
-public class InsertContasActivity extends AppCompatActivity {
+public class InsertContasActivity extends BaseDrawerActivity {
 
     private String[] classificacaoValues = new String[]{"-- Nenhum --", "Hot", "Warm", "Cold"};
     private String[] tipoValues = new String[]{"-- Nenhum --", "Prospect", "Customer - Direct", "Customer - Channel",
@@ -27,8 +27,8 @@ public class InsertContasActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_insert_contas);
-
+        //setContentView(R.layout.activity_insert_contas);
+        getLayoutInflater().inflate(R.layout.activity_insert_contas, frameLayout);
         adapterTipo = new ArrayAdapter<String>(this, R.layout.spinner_layout, R.id.text_spinner, tipoValues);
         adapterTipo.setDropDownViewResource(R.layout.spinner_layout);
 

@@ -10,11 +10,11 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".view.controller.VendasPipelineActivity">
 
-    <com.numetriclabz.numandroidcharts.FunnelChart
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/funnel_chart"/>
 
-
+            <com.numetriclabz.numandroidcharts.FunnelChart
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/funnel_chart"
+                android:layout_marginTop="50dp"/>
 
 </LinearLayout>

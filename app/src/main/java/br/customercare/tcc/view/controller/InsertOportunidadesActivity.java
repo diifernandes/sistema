@@ -25,7 +25,7 @@ import br.customercare.tcc.util.oportunidades.ConsultContas;
 import br.customercare.tcc.util.oportunidades.ContaAdapter;
 import br.customercare.tcc.util.oportunidades.InsertOportunidade;
 
-public class InsertOportunidadesActivity extends AppCompatActivity {
+public class InsertOportunidadesActivity extends BaseDrawerActivity {
 
     private String[] tiposValues = new String[]{"-- Nenhum --", "Existing Customer - Upgrade","Existing Customer - Replacement",
             "Existing Customer - Downgrade", "New Customer"};
@@ -52,8 +52,8 @@ public class InsertOportunidadesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_insert_oportunidades);
-
+        //setContentView(R.layout.activity_insert_oportunidades);
+        getLayoutInflater().inflate(R.layout.activity_insert_oportunidades, frameLayout);
         adapterTipo = new ArrayAdapter<String>(this, R.layout.spinner_layout, R.id.text_spinner, tiposValues);
         adapterTipo.setDropDownViewResource(R.layout.spinner_layout);
 

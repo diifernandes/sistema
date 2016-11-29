@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -29,79 +31,123 @@
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
 
-        <activity android:name=".view.controller.InsertLeadActivity" >
+        <activity android:name=".view.controller.InsertLeadActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".view.controller.LeadsActivity">
+        <activity android:name=".view.controller.LeadsActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".view.controller.UpdateLeadActivity" >
+        <activity android:name=".view.controller.UpdateLeadActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".view.controller.ViewLeadActivity" >
+        <activity android:name=".view.controller.ViewLeadActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".view.controller.ConvertLeadActivity" >
-        </activity>
-
-
-        <activity android:name=".view.controller.ContasActivity">
-        </activity>
-        <activity android:name=".view.controller.UpdateContasActivity">
-        </activity>
-        <activity android:name=".view.controller.InsertContasActivity">
-        </activity>
-        <activity android:name=".view.controller.ViewContaActivity">
+        <activity android:name=".view.controller.ConvertLeadActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
 
-        <activity android:name=".view.controller.MetricasActivity" >
+
+        <activity android:name=".view.controller.ContasActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".view.controller.ViewMetricasActivity">
+        <activity android:name=".view.controller.UpdateContasActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".view.controller.InsertMetricasActivity">
+        <activity android:name=".view.controller.InsertContasActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".view.controller.UpdateMetricasActivity">
+        <activity android:name=".view.controller.ViewContaActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
 
-        <activity android:name=".view.controller.ContatosActivity">
+        <activity android:name=".view.controller.MetricasActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".view.controller.ViewContatoActivity">
+        <activity android:name=".view.controller.ViewMetricasActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".view.controller.InsertContatoActivity">
+        <activity android:name=".view.controller.InsertMetricasActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".view.controller.ListInsertContasToContatoActivity">
-        </activity>
-        <activity android:name=".view.controller.UpdateContactActivity" >
-        </activity>
-
-        <activity android:name=".view.controller.CampanhasActivity" >
-        </activity>
-        <activity android:name=".view.controller.ViewCampanhaActivity">
+        <activity android:name=".view.controller.UpdateMetricasActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
 
-        <activity android:name=".view.controller.TarefasActivity" >
+        <activity android:name=".view.controller.ContatosActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".view.controller.InsertTarefasActivity">
+        <activity android:name=".view.controller.ViewContatoActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".view.controller.ViewTarefaActivity">
+        <activity android:name=".view.controller.InsertContatoActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".view.controller.UpdateTarefasActivity" >
+        <activity android:name=".view.controller.ListInsertContasToContatoActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-
-        <activity android:name=".view.controller.OportunidadesActivity" >
-        </activity>
-        <activity android:name=".view.controller.InsertOportunidadesActivity" >
-        </activity>
-        <activity android:name=".view.controller.ViewOportunidadeActivity" >
-        </activity>
-        <activity android:name=".view.controller.UpdateOportunidadesActivity" >
+        <activity android:name=".view.controller.UpdateContactActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
 
-        <activity android:name=".view.controller.VendasActivity" >
+        <activity android:name=".view.controller.CampanhasActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".view.controller.VendasTotalOppActivity" >
+        <activity android:name=".view.controller.ViewCampanhaActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".view.controller.VendasPipelineActivity" >
+
+        <activity android:name=".view.controller.TarefasActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".view.controller.VendasGanhosPerdasSemanalActivity" >
+        <activity android:name=".view.controller.InsertTarefasActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".view.controller.VendasGanhosPerdasMensalActivity" >
+        <activity android:name=".view.controller.ViewTarefaActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".view.controller.UpdateTarefasActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+
+        <activity android:name=".view.controller.OportunidadesActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".view.controller.InsertOportunidadesActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".view.controller.ViewOportunidadeActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".view.controller.UpdateOportunidadesActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+
+        <activity android:name=".view.controller.VendasActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".view.controller.VendasTotalOppActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".view.controller.VendasPipelineActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".view.controller.VendasGanhosPerdasSemanalActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".view.controller.VendasGanhosPerdasMensalActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:name=".view.controller.VisitasActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".view.controller.ViewVisitaActivity"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
     </application>

@@ -15,7 +15,9 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp">
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -49,11 +51,14 @@
         android:id="@+id/edtConvLeadOportunidadeNome"/>
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/btnConvLeadConvert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/btnConvLeadConvert"
         android:onClick="convert"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="20dp"
+        android:textColor="#FFFFFF"/>
 
 </LinearLayout>

@@ -19,7 +19,7 @@ import br.customercare.tcc.util.leads.ConsultOneLead;
 import br.customercare.tcc.util.leads.DeleteLead;
 import br.customercare.tcc.util.leads.UpdateLead;
 
-public class UpdateLeadActivity extends AppCompatActivity {
+public class UpdateLeadActivity extends BaseDrawerActivity {
 
     private String[] classificacaoValues = new String[]{"-- Nenhum --", "Hot", "Warm", "Cold"};
     private String[] statusValues = new String[]{"Open - Not Contacted", "Working - Contacted", "Closed - Converted", "Closed - Not Converted"};
@@ -34,8 +34,8 @@ public class UpdateLeadActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_update_leads);
-
+        //setContentView(R.layout.activity_update_leads);
+        getLayoutInflater().inflate(R.layout.activity_update_leads, frameLayout);
         adapterStatus = new ArrayAdapter<String>(this, R.layout.spinner_layout, R.id.text_spinner, statusValues);
         adapterStatus.setDropDownViewResource(R.layout.spinner_layout);
 

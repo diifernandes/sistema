@@ -20,8 +20,8 @@ public class LoginActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
 
         // FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         //fab.setOnClickListener(new View.OnClickListener() {
@@ -59,8 +59,10 @@ public class LoginActivity extends AppCompatActivity{
         LogarSF logarSF = new LogarSF(this);
         EditText editLogin = (EditText)findViewById(R.id.edit_login);
         EditText editSenha = (EditText)findViewById(R.id.edit_senha);
-        String login = editLogin.getText().toString();
-        String senha = editSenha.getText().toString();
+        String login = "usjt2016@gmail.com";
+        String senha = "2017@totos";
+        String loginw = editLogin.getText().toString();
+        String senhaw = editSenha.getText().toString();
         logarSF.execute(login, senha);
     }
 

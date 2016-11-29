@@ -2,29 +2,40 @@ package br.customercare.tcc.view.controller;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
 import com.sforce.soap.enterprise.sobject.Contact;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import br.customercare.tcc.R;
 import br.customercare.tcc.util.contatos.ConsultOneContact;
 import br.customercare.tcc.util.contatos.DeleteContact;
 
-public class ViewContatoActivity extends AppCompatActivity {
+public class ViewContatoActivity extends BaseDrawerActivity {
 
     TextView textProp, textNome, textConta, textTelefone, textCelular, textEmail, textTitulo;
     private Contact[] contact = new Contact[1];
     public final static String EXTRA_ID = "br.customercare.tcc.view.controller.ID";
+    private FloatingActionMenu menuRed;
+    private FloatingActionButton fab1;
+    private FloatingActionButton fab2;
+    private FloatingActionButton fab3;
+    private List<FloatingActionMenu> menus = new ArrayList<>();
+    private Handler mUiHandler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_contact);
-
+        //setContentView(R.layout.activity_view_contact);
+        getLayoutInflater().inflate(R.layout.activity_view_contact, frameLayout);
         textProp = (TextView)this.findViewById(R.id.txtViewContatoValuePropietario);
         textNome = (TextView)this.findViewById(R.id.txtViewContatoValueNome);
         textConta = (TextView)this.findViewById(R.id.txtViewContatoValueConta);
@@ -51,7 +62,61 @@ public class ViewContatoActivity extends AppCompatActivity {
             textEmail.setText(contact[0].getEmail());
             textTitulo.setText(contact[0].getTitle());
         }catch (NullPointerException e){}
+        menuRed = (FloatingActionMenu) findViewById(R.id.menu_red);
+        fab1 = (FloatingActionButton) findViewById(R.id.fab1);
+        fab2 = (FloatingActionButton) findViewById(R.id.fab2);
+
+
+
+        fab1.setEnabled(true);
+        fab2.setEnabled(true);
+
+        menuRed.setClosedOnTouchOutside(true);
+        //menuDown.hideMenuButton(false);
+        menuRed.hideMenuButton(false);
+        menus.add(menuRed);
+        fab1.setOnClickListener(clickListener);
+        fab2.setOnClickListener(clickListener);
+
+
+        int delay = 400;
+        for (final FloatingActionMenu menu : menus) {
+            mUiHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    menu.showMenuButton(true);
+                }
+            }, delay);
+            delay += 150;
+        }
+
+        menuRed.setOnMenuButtonClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (menuRed.isOpened()) {
+                    //Toast.makeText(getActivity(), menuRed.getMenuButtonLabelText(), Toast.LENGTH_SHORT).show();
+                }
+
+                menuRed.toggle(true);
+            }
+        });
+
     }
+
+    private View.OnClickListener clickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.fab1:
+                    updateContact(v);
+                    break;
+                case R.id.fab2:
+                    deleteContact(v);
+                    break;
+
+            }
+        }
+    };
 
     public void deleteContact(View view){
         DeleteContact deleteContact = new DeleteContact(this);

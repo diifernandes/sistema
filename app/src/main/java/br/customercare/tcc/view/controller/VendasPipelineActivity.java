@@ -19,7 +19,7 @@ import br.customercare.tcc.util.vendas.ConsultOportunidades;
 /**
  * Created by JeanThomas on 06/11/2016.
  */
-public class VendasPipelineActivity extends AppCompatActivity {
+public class VendasPipelineActivity extends BaseDrawerActivity {
     FunnelChart funnelGraph;
     ArrayList<Opportunity> opportunities;
     ArrayList<Lead> leads;
@@ -28,8 +28,8 @@ public class VendasPipelineActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vendas_pipeline);
-
+        //setContentView(R.layout.activity_vendas_pipeline);
+        getLayoutInflater().inflate(R.layout.activity_vendas_pipeline, frameLayout);
         opportunities = new ArrayList<Opportunity>();
         ConsultOportunidades consultOportunidades = new ConsultOportunidades(this);
         ConsultLeads consultLeads = new ConsultLeads(this);

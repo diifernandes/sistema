@@ -17,15 +17,15 @@ import br.customercare.tcc.util.vendas.ConsultOportunidadesMensal;
 /**
  * Created by JeanThomas on 06/11/2016.
  */
-public class VendasGanhosPerdasMensalActivity extends AppCompatActivity {
+public class VendasGanhosPerdasMensalActivity extends BaseDrawerActivity {
     PieChartL pieGraph;
     ArrayList<Opportunity> opportunities;
     float stageClosedWon, stageClosedLost = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vendas_ganhos_perdas_mensal);
-
+        //setContentView(R.layout.activity_vendas_ganhos_perdas_mensal);
+        getLayoutInflater().inflate(R.layout.activity_vendas_ganhos_perdas_mensal, frameLayout);
         opportunities = new ArrayList<Opportunity>();
         ConsultOportunidadesMensal consultOportunidadesMensal = new ConsultOportunidadesMensal(this);
 

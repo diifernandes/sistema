@@ -1,7 +1,7 @@
 ﻿<resources>
 
     <string name="app_name">CustomerCare</string>
-    <string name="action_settings">Configuraçoes</string>
+    <string name="action_settings">Configurações</string>
     <string name="title_activity_main_menu">Customer Care</string>
 
     <!--VIEW(content_login.xml)-->
@@ -15,59 +15,59 @@
 
     <!--VIEW(item_metrica_list.xml)-->
     <string name="txtListMetricaProprietario">Propietário: </string>
-    <string name="txtListMetricaNome">Nome da Métrica: </string>
-    <string name="txtListMetricaMeta">Nome da Meta: </string>
-    <string name="txtListMetricaTipo">Tipo de Registro: </string>
+    <string name="txtListMetricaNome">Nome da métrica: </string>
+    <string name="txtListMetricaMeta">Nome da meta: </string>
+    <string name="txtListMetricaTipo">Tipo de registro: </string>
 
     <!--VIEW(activity_metricas.xml)-->
     <string name="btnMetricaInsert">Inserir</string>
 
     <!--VIEW(activity_insert_metricas.xml)-->
-    <string name="txtInsMetricaTitleProgress">Progresso de Métrica</string>
+    <string name="txtInsMetricaTitleProgress">Progresso de métrica</string>
     <string name="edtInsMetricaNome">Nome</string>
-    <string name="edtInsMetricaDataInicio">Data Inicio</string>
-    <string name="edtInsMetricaDataVencimento">Data Vencimento</string>
-    <string name="edtInsMetricaValorAtual">Valor Atual</string>
-    <string name="edtInsMetricaValorInicial">Valor Inicial</string>
-    <string name="edtInsMetricaValorDestino">Valor de Destino</string>
+    <string name="edtInsMetricaDataInicio">Data inicio</string>
+    <string name="edtInsMetricaDataVencimento">Data vencimento</string>
+    <string name="edtInsMetricaValorAtual">Valor atual</string>
+    <string name="edtInsMetricaValorInicial">Valor inicial</string>
+    <string name="edtInsMetricaValorDestino">Valor de destino</string>
     <string name="edtInsMetricaComentario">Comentário</string>
     <string name="edtInsMetricaDescricao">Descrição</string>
     <string name="btnInsMetricaInsert">Inserir</string>
 
     <!--VIEW(activity_update_metricas.xml)-->
-    <string name="txtUpdMetricaTitleProgress">Progresso de Métrica</string>
+    <string name="txtUpdMetricaTitleProgress">Progresso de métrica</string>
     <string name="edtUpdMetricaNome">Nome</string>
-    <string name="edtUpdMetricaDataInicio">Data Inicio</string>
-    <string name="edtUpdMetricaDataVencimento">Data Vencimento</string>
-    <string name="edtUpdMetricaValorAtual">Valor Atual</string>
-    <string name="edtUpdMetricaValorInicial">Valor Inicial</string>
-    <string name="edtUpdMetricaValorDestino">Valor de Destino</string>
+    <string name="edtUpdMetricaDataInicio">Data inicio</string>
+    <string name="edtUpdMetricaDataVencimento">Data vencimento</string>
+    <string name="edtUpdMetricaValorAtual">Valor atual</string>
+    <string name="edtUpdMetricaValorInicial">Valor inicial</string>
+    <string name="edtUpdMetricaValorDestino">Valor de destino</string>
     <string name="edtUpdMetricaComentario">Comentário</string>
-    <string name="edtUpdMetricaDescricao">Descriçao</string>
+    <string name="edtUpdMetricaDescricao">Descrição</string>
     <string name="btnUpdMetricaInsert">Atualizar</string>
 
     <!--VIEW(activity_view_metricas.xml)-->
-    <string name="txtViewMetricaTipo">Tipo do Registro:</string>
+    <string name="txtViewMetricaTipo">Tipo do registro:</string>
     <string name="txtViewMetricaStatus">Status:</string>
     <string name="txtViewMetricaNome">Nome:</string>
-    <string name="txtViewMetricaOwnerMeta">Responsável pela Meta:</string>
+    <string name="txtViewMetricaOwnerMeta">Responsável pela meta:</string>
     <string name="txtViewMetricaMeta">Meta:</string>
     <string name="txtViewMetricaProgresso">Progresso:</string>
-    <string name="txtViewMetricaDataInicio">Data Inicio:</string>
-    <string name="txtViewMetricaDataVencimento">Data Vencimento:</string>
-    <string name="txtViewMetricaValorAtual">Valor Atual:</string>
-    <string name="txtViewMetricaTitleProgress">Progresso de Métrica</string>
-    <string name="txtViewMetricaValorInicial">Valor Inicial:</string>
-    <string name="txtViewMetricaValorDestino">Valor de Destino:</string>
+    <string name="txtViewMetricaDataInicio">Data inicio:</string>
+    <string name="txtViewMetricaDataVencimento">Data vencimento:</string>
+    <string name="txtViewMetricaValorAtual">Valor atual:</string>
+    <string name="txtViewMetricaTitleProgress">Progresso de métrica</string>
+    <string name="txtViewMetricaValorInicial">Valor inicial:</string>
+    <string name="txtViewMetricaValorDestino">Valor de destino:</string>
     <string name="txtViewMetricaComentario">Comentário:</string>
-    <string name="txtViewMetricaDescricao">Descriçao:</string>
+    <string name="txtViewMetricaDescricao">Descrição:</string>
     <string name="btnViewMetricaExcluir">Excluir</string>
     <string name="btnViewMetricaAtualizar">Atualizar</string>
 
     <!--VIEW(item_campanha_list.xml)-->
-    <string name="txtListCampanhaProprietario">Propietário: </string>
-    <string name="txtListCampanhaNome">Nome da Camapanha: </string>
-    <string name="txtListCampanhaTipo">Tipo da Campanha: </string>
+    <string name="txtListCampanhaProprietario">Proprietário: </string>
+    <string name="txtListCampanhaNome">Nome da camapanha: </string>
+    <string name="txtListCampanhaTipo">Tipo da campanha: </string>
     <string name="txtListCampanhaStatus">Status: </string>
 
     <!--VIEW(activity_view_campanha.xml)-->
@@ -76,18 +76,18 @@
     <string name="txtViewCampanhaAtivo">Ativo?: </string>
     <string name="txtViewCampanhaTipo">Tipo: </string>
     <string name="txtViewCampanhaStatus">Status: </string>
-    <string name="txtViewCampanhaDataInicio">Data de Início: </string>
-    <string name="txtViewCampanhaDataTermino">Data de Término: </string>
-    <string name="txtViewCampanhaReceitaEsperada">Receita Esperada: </string>
-    <string name="txtViewCampanhaCustoEstimado">Custo Estimado: </string>
-    <string name="txtViewCampanhaCustoReal">Custo Real: </string>
-    <string name="txtViewCampanhaRespostaEsperada">Resposta Esperada: </string>
-    <string name="txtViewCampanhaPai">Campanha Pai: </string>
-    <string name="txtViewCampanhaTotalLeads">Total de Leads: </string>
-    <string name="txtViewCampanhaTotalLeadsConvertidos">Total de Leads Convertidos: </string>
-    <string name="txtViewCampanhaTotalContatos">Total de Contatos: </string>
-    <string name="txtViewCampanhaValorTotalOportunidades">Valor Total de Oportunidades: </string>
-    <string name="txtViewCampanhaValorTotalOportunidadesGanhas">Valor Total de Oportunidades Ganhas: </string>
+    <string name="txtViewCampanhaDataInicio">Data de início: </string>
+    <string name="txtViewCampanhaDataTermino">Data de término: </string>
+    <string name="txtViewCampanhaReceitaEsperada">Receita esperada: </string>
+    <string name="txtViewCampanhaCustoEstimado">Custo estimado: </string>
+    <string name="txtViewCampanhaCustoReal">Custo real: </string>
+    <string name="txtViewCampanhaRespostaEsperada">Resposta esperada: </string>
+    <string name="txtViewCampanhaPai">Campanha pai: </string>
+    <string name="txtViewCampanhaTotalLeads">Total de leads: </string>
+    <string name="txtViewCampanhaTotalLeadsConvertidos">Total de leads convertidos: </string>
+    <string name="txtViewCampanhaTotalContatos">Total de contatos: </string>
+    <string name="txtViewCampanhaValorTotalOportunidades">Valor total de oportunidades: </string>
+    <string name="txtViewCampanhaValorTotalOportunidadesGanhas">Valor total de oportunidades ganhas: </string>
 
     <!--VIEW(activity_tarefas.xml)-->
     <string name="btnTarefaInserir">Inserir</string>
@@ -95,31 +95,31 @@
     <!--VIEW(item_campanha_list.xml)-->
     <string name="txtListTarefaProprietario">Atribuído a: </string>
     <string name="txtListTarefaAssunto">Assunto: </string>
-    <string name="txtListTarefaDataVencimento">Data de Vencimento: </string>
+    <string name="txtListTarefaDataVencimento">Data de vencimento: </string>
     <string name="txtListTarefaStatus">Status: </string>
 
     <!--VIEW(activity_insert_tarefas.xml)-->
     <string name="edtInsTarefaAssunto">Assunto</string>
     <string name="edtInsTarefaDataVencimento">Data de Vencimento</string>
-    <string name="edtInsTarefaComentarios">Comentarios</string>
+    <string name="edtInsTarefaComentarios">Comentários</string>
     <string name="btnInsTarefaInsert">Inserir</string>
 
     <!--VIEW(activity_view_tarefa.xml)-->
     <string name="txtViewTarefaProprietario">Atribuído a: </string>
     <string name="txtViewTarefaAssunto">Assunto: </string>
-    <string name="txtViewTarefaDataVencimento">Data de Vencimento: </string>
+    <string name="txtViewTarefaDataVencimento">Data de vencimento: </string>
     <string name="txtViewTarefaPrioridade">Prioridade: </string>
     <string name="txtViewTarefaStatus">Status: </string>
     <string name="txtViewTarefaNome">Nome: </string>
-    <string name="txtViewTarefaRelativo">Relativo a: </string>
-    <string name="txtViewTarefaComentario">Comentario: </string>
+    <string name="txtViewTarefaRelativo">Relativo à: </string>
+    <string name="txtViewTarefaComentario">Comentário: </string>
     <string name="btnViewTarefaExcluir">Excluir</string>
     <string name="btnViewTarefaAtualizar">Atualizar</string>
 
     <!--VIEW(activity_update_tarefas.xml)-->
     <string name="edtUpdTarefaAssunto">Assunto</string>
-    <string name="edtUpdTarefaDataVencimento">Data de Vencimento</string>
-    <string name="edtUpdTarefaComentarios">Comentarios</string>
+    <string name="edtUpdTarefaDataVencimento">Data de vencimento</string>
+    <string name="edtUpdTarefaComentarios">Comentários</string>
     <string name="btnUpdTarefaUpdate">Atualizar</string>
 
     <!--VIEW(activity_oportunidades.xml)-->
@@ -134,7 +134,7 @@
     <!--VIEW(activity_insert_oportunidades.xml)-->
     <string name="edtInsOportunidadeNome">Nome </string>
     <string name="edtInsOportunidadeValor">Valor ($) </string>
-    <string name="edtInsOportunidadeDataFechamento">Data Fechamento </string>
+    <string name="edtInsOportunidadeDataFechamento">Data de fechamento </string>
     <string name="edtInsOportunidadeProxEtapa">Proxima Etapa </string>
     <string name="edtInsOportunidadeProbabilidade">Probabilidade </string>
     <string name="btnInsOportunidadeInsert">Inserir </string>
@@ -145,8 +145,8 @@
     <string name="txtViewOportunidadeTipo">Tipo: </string>
     <string name="txtViewOportunidadeLead">Origem do Lead: </string>
     <string name="txtViewOportunidadeValor">Valor: </string>
-    <string name="txtViewOportunidadeDataFechamento">Data Fechamento: </string>
-    <string name="txtViewOportunidadeProxEtapa">Próxima Etapa: </string>
+    <string name="txtViewOportunidadeDataFechamento">Data de fechamento: </string>
+    <string name="txtViewOportunidadeProxEtapa">Próxima etapa: </string>
     <string name="txtViewOportunidadeFase">Fase: </string>
     <string name="txtViewOportunidadeProbabilidade">Probabilidade (%): </string>
     <string name="txtViewOportunidadeCampanha">Origem da campanha principal: </string>
@@ -156,8 +156,8 @@
     <!--VIEW(activity_update_oportunidades.xml)-->
     <string name="edtUpdOportunidadeNome">Nome </string>
     <string name="edtUpdOportunidadeValor">Valor ($) </string>
-    <string name="edtUpdOportunidadeDataFechamento">Data Fechamento </string>
-    <string name="edtUpdOportunidadeProxEtapa">Proxima Etapa </string>
+    <string name="edtUpdOportunidadeDataFechamento">Data de fechamento </string>
+    <string name="edtUpdOportunidadeProxEtapa">Proxima etapa </string>
     <string name="edtUpdOportunidadeProbabilidade">Probabilidade </string>
     <string name="btnUpdOportunidadeUpdate">Atualizar </string>
 
@@ -167,9 +167,9 @@
     <string name="edtInsContaSetor">Setor</string>
     <string name="edtInsContaOrigem">Origem</string>
     <string name="edtInsContaReceita">Receita</string>
-    <string name="edtInsContaFuncionarios">Funcionarios</string>
-    <string name="edtInsContaEndereco">Endereço de Cobrança</string>
-    <string name="btnInsContaInsert">Cadastrar Conta</string>
+    <string name="edtInsContaFuncionarios">Funcionários</string>
+    <string name="edtInsContaEndereco">Endereço de cobrança</string>
+    <string name="btnInsContaInsert">Cadastrar conta</string>
 
     <!--VIEW(activity_view_contas.xml)-->
     <string name="txtViewContaPropietario">Propietario: </string>
@@ -179,8 +179,8 @@
     <string name="txtViewContaTelefone">Telefone: </string>
     <string name="txtViewContaSetor">Setor: </string>
     <string name="txtViewContaTipo">Tipo: </string>
-    <string name="txtViewContaReceita">Receita Anual: </string>
-    <string name="txtViewContaFuncionarios">Funcionarios: </string>
+    <string name="txtViewContaReceita">Receita anual: </string>
+    <string name="txtViewContaFuncionarios">Funcionários: </string>
     <string name="txtViewContaEndereco">Endereço: </string>
     <string name="btnViewContaExcluir">Excluir</string>
     <string name="btnViewContaAtualizar">Atualizar</string>
@@ -192,7 +192,7 @@
     <string name="edtUpdContaOrigem">Origem</string>
     <string name="edtUpdContaReceita">Receita</string>
     <string name="edtUpdContaFuncionarios">Funcionarios</string>
-    <string name="edtUpdContaEndereco">Endereço de Cobrança</string>
+    <string name="edtUpdContaEndereco">Endereço de cobrança</string>
     <string name="btnUpdContaUpdate">Atualizar</string>
 
     <!--VIEW(activity_contas.xml)-->
@@ -212,9 +212,9 @@
     <string name="edtInsLeadReceita">Receita</string>
     <string name="edtInsLeadTelefone">Telefone</string>
     <string name="edtInsLeadEmail">Email</string>
-    <string name="edtInsLeadFuncionarios">Funcionarios</string>
+    <string name="edtInsLeadFuncionarios">Funcionários</string>
     <string name="edtInsLeadEndereco">Endereço</string>
-    <string name="btnInsLeadInsert">Cadastrar Lead</string>
+    <string name="btnInsLeadInsert">Cadastrar lead</string>
 
     <!--VIEW(activity_view_leads.xml)-->
     <string name="txtViewLeadNome">Nome: </string>
@@ -241,13 +241,13 @@
     <string name="edtUpdLeadReceita">Receita</string>
     <string name="edtUpdLeadTelefone">Telefone</string>
     <string name="edtUpdLeadEmail">Email</string>
-    <string name="edtUpdLeadFuncionarios">Funcionarios</string>
+    <string name="edtUpdLeadFuncionarios">Funcionários</string>
     <string name="edtUpdLeadEndereco">Endereço</string>
     <string name="btnUpdLeadUpdate">Atualizar</string>
 
     <!--VIEW(activity_convert_leads.xml)-->
-    <string name="txtConvLeadProprietario">Propietário do Lead</string>
-    <string name="chkConvLeadOportunidade">Não gerar Oportunidade</string>
+    <string name="txtConvLeadProprietario">Propietário do lead</string>
+    <string name="chkConvLeadOportunidade">Não gerar oportunidade</string>
     <string name="edtConvLeadOportunidadeNome">Nome da oportunidade</string>
     <string name="btnConvLeadConvert">Converter</string>
 
@@ -262,11 +262,11 @@
     <!--VIEW(activity_vendas.xml)-->
     <string name="btnVendasTotalOportunidades">Total Oportunidades</string>
     <string name="btnVendasPipeline">Pipeline</string>
-    <string name="btnVendasGanhosPerdasS">Ganhos e Perdas Semanal</string>
-    <string name="btnVendasGanhosPerdasM">Ganhos e Perdas Mensal</string>
+    <string name="btnVendasGanhosPerdasS">Ganhos e perdas semanal</string>
+    <string name="btnVendasGanhosPerdasM">Ganhos e perdas mensal</string>
 
     <!--VIEW(item_contacts_list.xml)-->
-    <string name="txtListContatoNome">Nome do Contato</string>
+    <string name="txtListContatoNome">Nome do contato</string>
     <string name="txtListContatoConta">Conta</string>
     <string name="txtListContatoTelefone">Telefone</string>
 
@@ -281,7 +281,7 @@
     <string name="edtInsContatoCelular">Celular</string>
     <string name="edtInsContatoEmail">Email</string>
     <string name="edtInsContatoTitulo">Titulo</string>
-    <string name="btnInsContatoInserir">Cadastrar Contato</string>
+    <string name="btnInsContatoInserir">Cadastrar contato</string>
 
     <!--VIEW(activity_view_contacts.xml)-->
     <string name="txtViewContatoPropietario">Propietario: </string>
@@ -302,7 +302,7 @@
     <string name="edtUpdContatoCelular">Celular</string>
     <string name="edtUpdContatoEmail">Email</string>
     <string name="edtUpdContatoTitulo">Titulo</string>
-    <string name="btnUpdContatoUpdate">Atualizar Contato</string>
+    <string name="btnUpdContatoUpdate">Atualizar contato</string>
 
 
 
@@ -327,7 +327,7 @@
         <string name="edit_fNameLead">Primeiro nome</string>
         <string name="edit_lNameLead">Sobrenome</string>
         <string name="edit_companyLead">Empresa</string>
-        <string name="button_createLead">Cadastrar Lead</string>
+        <string name="button_createLead">Cadastrar lead</string>
 
         <!--VIEW(activity_view_leads.xml)-->
         <string name="lb_fNameLead">Nome</string>
@@ -338,9 +338,9 @@
         <string name="button_updateLead">Atualizar</string>
 
         <!--VIEW(activity_convert_leads.xml)-->
-        <string name="text_ownerConvert">Propietário do Lead</string>
-        <string name="spinner_accountConvert">Selecionar Conta</string>
-        <string name="check_opportunityConvert">Não gerar Oportunidade</string>
+        <string name="text_ownerConvert">Propietário do lead</string>
+        <string name="spinner_accountConvert">Selecionar conta</string>
+        <string name="check_opportunityConvert">Não gerar oportunidade</string>
         <string name="edit_nameOpportunityConvert">Nome da oportunidade</string>
         <string name="button_convert">Converter</string>
 
@@ -363,12 +363,12 @@
         <string name="button_inserirConta">Inserir</string>
 
         <!--VIEW(item_conta_list.xml)-->
-        <string name="text_nPropConta">Proprietário da Conta</string>
-        <string name="text_nConta">Nome da Conta</string>
+        <string name="text_nPropConta">Proprietário da conta</string>
+        <string name="text_nConta">Nome da conta</string>
 
         <!--VIEW(activity_insert_conta.xml)-->
-        <string name="text_IncNomeConta">Insira o Nome da Conta</string>
-        <string name="button_CreateConta">Cadastrar Conta</string>
+        <string name="text_IncNomeConta">Insira o nome da conta</string>
+        <string name="button_CreateConta">Cadastrar conta</string>
 
         <!--VIEW(activity_view_contas.xml)-->
         <string name="lb_PropConta">Propietário: </string>
@@ -380,7 +380,7 @@
         <string name="button_inserirContato">Inserir</string>
 
         <!--VIEW(item_contacts_list.xml)-->
-        <string name="text_nameContact">Nome do Contato</string>
+        <string name="text_nameContact">Nome do contato</string>
         <string name="text_accountContact">Conta</string>
 
         <!--VIEW(activity_view_contacts.xml)-->
@@ -393,7 +393,7 @@
         <string name="edit_fNameContato">Primeiro nome</string>
         <string name="edit_lNameContato">Sobrenome</string>
         <string name="edit_accountContato">Conta</string>
-        <string name="button_createContato">Cadastrar Contato</string>
+        <string name="button_createContato">Cadastrar contato</string>
 
         <!--VIEW(activity_update_contacts.xml)-->
         <string name="edit_upFNameContact">Primeiro nome</string>
@@ -404,7 +404,7 @@
         <!-- Teste -->
         <string name="edit_message">Escreva uma mensagem</string>
         <string name="button_send">Envie</string>
-        <string name="title_activity_main">Atividade Principal</string>
+        <string name="title_activity_main">Atividade principal</string>
 
 
 
@@ -429,9 +429,11 @@
         <string name="nav_item_home">Início</string>
         <string name="nav_item_friends">Amigos</string>
         <string name="nav_item_notifications">Mensagens</string>
+    <string name="status_lead">Status</string>
+    <string name="temperatura_lead">Temperatura</string>
 
 
-        <!-- navigation drawer item labels  -->
+    <!-- navigation drawer item labels  -->
         <string-array name="nav_drawer_labels">
             <item>@string/title_home</item>
             <item>@string/title_videos</item>
@@ -459,6 +461,35 @@
 
         </string-array>
 
+    <!--VIEW(item_visita_list.xml)-->
+    <string name="txtListVisitaProprietario">Atribuído a: </string>
+    <string name="txtListVisitaAssunto">Assunto: </string>
+    <string name="txtListVisitaDataVencimento">Data de vencimento: </string>
+    <string name="txtListVisitaStatus">Status: </string>
+
+    <!--VIEW(activity_view_visitas.xml)-->
+    <string name="txtViewVisitaProprietario">Atribuído a: </string>
+    <string name="txtViewVisitaAssunto">Assunto: </string>
+    <string name="txtViewVisitaDataVencimento">Data de vencimento: </string>
+    <string name="txtViewVisitaPrioridade">Prioridade: </string>
+    <string name="txtViewVisitaStatus">Status: </string>
+    <string name="txtViewVisitaNome">Nome: </string>
+    <string name="txtViewVisitaRelativo">Relativo a: </string>
+    <string name="txtViewVisitaEndereco">Endereço: </string>
+    <string name="txtViewVisitaComentario">Comentário: </string>
+    <string name="btnViewVisitaRoteirizar">Roteirizar</string>
+
+
+    <string name="cardview_contents">This is a CardView widget. CardView widgets can have
+        shadows and rounded corners.
+        \n\nTo create a card with a shadow, use the <font fgcolor="#FFFFFFFF">android:elevation</font>
+        attribute.
+        \n\nTo set the corner radius in your layouts, use the <font
+            fgcolor="#FFFFFFFF">card_view:cardCornerRadius</font> attribute.
+    </string>
+    <string name="cardview_radius_seekbar_text">Radius</string>
+    <string name="cardview_elevation_seekbar_text">Elevation</string>
+    <string name="textContaContato">Selecione uma conta para associar o contato</string>
 
 
 </resources>

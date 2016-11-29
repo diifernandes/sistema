@@ -1,169 +1,217 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".view.controller.ViewTarefaActivity">
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="br.customercare.tcc.view.controller.ViewTarefaActivity"
+    >
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewTarefaProprietario"
-            android:text="@string/txtViewTarefaProprietario" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewTarefaValueProprietario"
-            android:paddingLeft="20dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="100dp"
+                card_view:cardBackgroundColor="#ede9e9e9"
+                card_view:cardCornerRadius="1dp"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginRight="@dimen/margin_large"
+                android:layout_marginTop="50dp"
+                >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewTarefaAssunto"
-            android:text="@string/txtViewTarefaAssunto" />
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:padding="16dp"
+                    android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewTarefaValueAssunto"
-            android:paddingLeft="20dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewTarefaDataVencimento"
-            android:text="@string/txtViewTarefaDataVencimento" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewTarefaProprietario"
+                        android:text="@string/txtViewTarefaProprietario"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewTarefaValueDataVencimento"
-            android:paddingLeft="20dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewTarefaValueProprietario"
+                        android:textSize="14sp"
+                        android:layout_below="@+id/txtViewTarefaProprietario"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewTarefaPrioridade"
-            android:text="@string/txtViewTarefaPrioridade" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewTarefaValuePrioridade"
-            android:paddingLeft="20dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewTarefaStatus"
-            android:text="@string/txtViewTarefaStatus" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewTarefaAssunto"
+                        android:text="@string/txtViewTarefaAssunto"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/txtViewTarefaValueProprietario"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewTarefaValueAssunto"
+                        android:paddingLeft="20dp"
+                        android:layout_below="@+id/txtViewTarefaAssunto"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewTarefaValueStatus"
-            android:paddingLeft="20dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewTarefaNome"
-            android:text="@string/txtViewTarefaNome" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewTarefaDataVencimento"
+                        android:text="@string/txtViewTarefaDataVencimento"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/txtViewTarefaValueAssunto"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewTarefaValueDataVencimento"
+                        android:paddingLeft="20dp"
+                        android:layout_below="@+id/txtViewTarefaDataVencimento"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewTarefaValueNome"
-            android:paddingLeft="20dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewTarefaRelativo"
-            android:text="@string/txtViewTarefaRelativo" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewTarefaValueRelativo"
-            android:paddingLeft="20dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewTarefaPrioridade"
+                        android:text="@string/txtViewTarefaPrioridade"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/txtViewTarefaValueDataVencimento"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewTarefaValuePrioridade"
+                        android:paddingLeft="20dp"
+                        android:layout_below="@+id/txtViewTarefaPrioridade"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewTarefaComentario"
-            android:text="@string/txtViewTarefaComentario" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewTarefaValueComentario"
-            android:paddingLeft="20dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnViewTarefaExcluir"
-            android:text="@string/btnViewTarefaExcluir"
-            android:onClick="deleteTarefa"
-            android:layout_gravity="left"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewTarefaStatus"
+                        android:text="@string/txtViewTarefaStatus"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/txtViewTarefaValuePrioridade"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewTarefaValueStatus"
+                        android:paddingLeft="20dp"
+                        android:layout_below="@+id/txtViewTarefaStatus"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewTarefaNome"
+                        android:text="@string/txtViewTarefaNome"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/txtViewTarefaValueStatus"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewTarefaValueNome"
+                        android:paddingLeft="20dp"
+                        android:layout_below="@+id/txtViewTarefaNome"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnViewTarefaAtualizar"
-            android:text="@string/btnViewTarefaAtualizar"
-            android:onClick="updateTarefa"
-            android:layout_gravity="center"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewTarefaRelativo"
+                        android:text="@string/txtViewTarefaRelativo"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/txtViewTarefaValueNome"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewTarefaValueRelativo"
+                        android:paddingLeft="20dp"
+                        android:layout_below="@+id/txtViewTarefaRelativo"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewTarefaComentario"
+                        android:text="@string/txtViewTarefaComentario"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/txtViewTarefaValueRelativo"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewTarefaValueComentario"
+                        android:paddingLeft="20dp"
+                        android:layout_below="@+id/txtViewTarefaComentario"/>
+
+
+
+
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
         </LinearLayout>
-</LinearLayout>
+    </LinearLayout>
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/menu_red"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        fab:menu_labels_ellipsize="end"
+        fab:menu_labels_singleLine="true"
+        fab:menu_backgroundColor="@color/transp"
+        fab:menu_fab_label="Menu de lead">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add"
+            fab:fab_size="mini"
+            fab:fab_label="Editar" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add"
+            fab:fab_size="mini"
+            fab:fab_label="Excluir" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+</android.support.design.widget.CoordinatorLayout>
+

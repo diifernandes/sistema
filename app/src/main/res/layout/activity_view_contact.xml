@@ -1,156 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" 
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="br.customercare.tcc.view.controller.ViewContactActivity">
+    tools:context="br.customercare.tcc.view.controller.ViewContactActivity"
+    >
 
     <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="100dp"
+                card_view:cardBackgroundColor="#ede9e9e9"
+                card_view:cardCornerRadius="1dp"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginRight="@dimen/margin_large"
+                android:layout_marginTop="50dp"
+                >
+
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:padding="16dp"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewContatoPropietario"
+                        android:text="@string/txtViewContatoPropietario"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewContatoValuePropietario"
+                        android:textSize="14sp"
+                        android:layout_below="@+id/txtViewContatoPropietario"/>
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewContatoNome"
+                        android:text="@string/txtViewContatoNome"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/txtViewContatoValuePropietario"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewContatoValueNome"
+                        android:paddingLeft="20dp"
+                        android:layout_below="@+id/txtViewContatoNome"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewContatoConta"
+                        android:text="@string/txtViewContatoConta"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/txtViewContatoValueNome"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewContatoValueConta"
+                        android:paddingLeft="20dp"
+                        android:layout_below="@+id/txtViewContatoConta"/>
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewContatoTelefone"
+                        android:text="@string/txtViewContatoTelefone"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/txtViewContatoValueConta"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewContatoValueTelefone"
+                        android:paddingLeft="20dp"
+                        android:layout_below="@+id/txtViewContatoTelefone"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewContatoCelular"
+                        android:text="@string/txtViewContatoCelular"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/txtViewContatoValueTelefone"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewContatoValueCelular"
+                        android:paddingLeft="20dp"
+                        android:layout_below="@+id/txtViewContatoCelular"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewContatoEmail"
+                        android:text="@string/txtViewContatoEmail"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/txtViewContatoValueCelular"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewContatoValueEmail"
+                        android:paddingLeft="20dp"
+                        android:layout_below="@+id/txtViewContatoEmail"/>
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewContatoTitulo"
+                        android:text="@string/txtViewContatoTitulo"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/txtViewContatoValueEmail"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewContatoValueTitulo"
+                        android:paddingLeft="20dp"
+                        android:layout_below="@+id/txtViewContatoTitulo"/>
+
+
+
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </LinearLayout>
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/menu_red"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        fab:menu_labels_ellipsize="end"
+        fab:menu_labels_singleLine="true"
+        fab:menu_backgroundColor="@color/transp"
+        fab:menu_fab_label="Menu de lead">
 
-        <TextView
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txtViewContatoPropietario"
-            android:text="@string/txtViewContatoPropietario" />
+            android:src="@drawable/ic_add"
+            fab:fab_size="mini"
+            fab:fab_label="Editar" />
 
-        <TextView
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txtViewContatoValuePropietario"
-            android:paddingLeft="20dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            android:src="@drawable/ic_add"
+            fab:fab_size="mini"
+            fab:fab_label="Excluir" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewContatoNome"
-            android:text="@string/txtViewContatoNome" />
+    </com.github.clans.fab.FloatingActionMenu>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewContatoValueNome"
-            android:paddingLeft="20dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+</android.support.design.widget.CoordinatorLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewContatoConta"
-            android:text="@string/txtViewContatoConta" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewContatoValueConta"
-            android:paddingLeft="20dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewContatoTelefone"
-            android:text="@string/txtViewContatoTelefone" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewContatoValueTelefone"
-            android:paddingLeft="20dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewContatoCelular"
-            android:text="@string/txtViewContatoCelular" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewContatoValueCelular"
-            android:paddingLeft="20dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewContatoEmail"
-            android:text="@string/txtViewContatoEmail" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewContatoValueEmail"
-            android:paddingLeft="20dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewContatoTitulo"
-            android:text="@string/txtViewContatoTitulo" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewContatoValueTitulo"
-            android:paddingLeft="20dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnViewContatoDeletar"
-            android:text="@string/btnViewContatoDeletar"
-            android:onClick="deleteContact"
-            android:layout_gravity="left"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnViewContatoAtualizar"
-            android:text="@string/btnViewContatoAtualizar"
-            android:onClick="updateContact"
-            android:layout_gravity="right"/>
-
-    </LinearLayout>
-</LinearLayout>

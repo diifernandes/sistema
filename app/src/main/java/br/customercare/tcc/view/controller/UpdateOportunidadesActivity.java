@@ -29,7 +29,7 @@ import br.customercare.tcc.util.oportunidades.ConsultOneOportunidade;
 import br.customercare.tcc.util.oportunidades.ContaAdapter;
 import br.customercare.tcc.util.oportunidades.UpdateOportunidade;
 
-public class UpdateOportunidadesActivity extends AppCompatActivity {
+public class UpdateOportunidadesActivity extends BaseDrawerActivity {
 
     private String[] tiposValues = new String[]{"-- Nenhum --", "Existing Customer - Upgrade","Existing Customer - Replacement",
             "Existing Customer - Downgrade", "New Customer"};
@@ -59,8 +59,8 @@ public class UpdateOportunidadesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_update_oportunidades);
-
+        //setContentView(R.layout.activity_update_oportunidades);
+        getLayoutInflater().inflate(R.layout.activity_update_oportunidades, frameLayout);
         adapterTipo = new ArrayAdapter<String>(this, R.layout.spinner_layout, R.id.text_spinner, tiposValues);
         adapterTipo.setDropDownViewResource(R.layout.spinner_layout);
 

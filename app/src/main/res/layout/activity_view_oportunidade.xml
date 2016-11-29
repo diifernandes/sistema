@@ -1,203 +1,245 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".view.controller.ViewOportunidadeActivity">
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="br.customercare.tcc.view.controller.ViewOportunidadeActivity"
+    >
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewOportunidadeNome"
-            android:text="@string/txtViewOportunidadeNome" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewOportunidadeValueNome"
-            android:paddingLeft="20dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="100dp"
+                card_view:cardBackgroundColor="#ede9e9e9"
+                card_view:cardCornerRadius="1dp"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginRight="@dimen/margin_large"
+                android:layout_marginTop="50dp"
+                >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewOportunidadeConta"
-            android:text="@string/txtViewOportunidadeConta" />
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:padding="16dp"
+                    android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewOportunidadeValueConta"
-            android:paddingLeft="20dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewOportunidadeTipo"
-            android:text="@string/txtViewOportunidadeTipo" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewOportunidadeNome"
+                        android:text="@string/txtViewOportunidadeNome"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewOportunidadeValueTipo"
-            android:paddingLeft="20dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewOportunidadeValueNome"
+                        android:textSize="14sp"
+                        android:paddingLeft="20dp"
+                        android:layout_below="@+id/txtViewOportunidadeNome"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewOportunidadeLead"
-            android:text="@string/txtViewOportunidadeLead" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewOportunidadeValueLead"
-            android:paddingLeft="20dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewOportunidadeValor"
-            android:text="@string/txtViewOportunidadeValor" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewOportunidadeConta"
+                        android:text="@string/txtViewOportunidadeConta"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/txtViewOportunidadeValueNome"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewOportunidadeValueConta"
+                        android:paddingLeft="20dp"
+                        android:layout_below="@+id/txtViewOportunidadeConta"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewOportunidadeValueValor"
-            android:paddingLeft="20dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewOportunidadeDataFechamento"
-            android:text="@string/txtViewOportunidadeDataFechamento" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewOportunidadeTipo"
+                        android:text="@string/txtViewOportunidadeTipo"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/txtViewOportunidadeValueConta"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewOportunidadeValueTipo"
+                        android:paddingLeft="20dp"
+                        android:layout_below="@+id/txtViewOportunidadeTipo"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewOportunidadeValueDataFechamento"
-            android:paddingLeft="20dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewOportunidadeProxEtapa"
-            android:text="@string/txtViewOportunidadeProxEtapa" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewOportunidadeValueProxEtapa"
-            android:paddingLeft="20dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewOportunidadeLead"
+                        android:text="@string/txtViewOportunidadeLead"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/txtViewOportunidadeValueTipo"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewOportunidadeValueLead"
+                        android:paddingLeft="20dp"
+                        android:layout_below="@+id/txtViewOportunidadeLead"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewOportunidadeFase"
-            android:text="@string/txtViewOportunidadeFase" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewOportunidadeValueFase"
-            android:paddingLeft="20dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewOportunidadeValor"
+                        android:text="@string/txtViewOportunidadeValor"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/txtViewOportunidadeValueLead"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewOportunidadeValueValor"
+                        android:paddingLeft="20dp"
+                        android:layout_below="@+id/txtViewOportunidadeValor"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewOportunidadeDataFechamento"
+                        android:text="@string/txtViewOportunidadeDataFechamento"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/txtViewOportunidadeValueValor"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewOportunidadeValueDataFechamento"
+                        android:paddingLeft="20dp"
+                        android:layout_below="@+id/txtViewOportunidadeDataFechamento"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewOportunidadeProbabilidade"
-            android:text="@string/txtViewOportunidadeProbabilidade" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewOportunidadeValueProbabilidade"
-            android:paddingLeft="20dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewOportunidadeCampanha"
-            android:text="@string/txtViewOportunidadeCampanha" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewOportunidadeProxEtapa"
+                        android:text="@string/txtViewOportunidadeProxEtapa"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/txtViewOportunidadeValueDataFechamento"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewOportunidadeValueProxEtapa"
+                        android:paddingLeft="20dp"
+                        android:layout_below="@+id/txtViewOportunidadeProxEtapa"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtViewOportunidadeValueCampanha"
-            android:paddingLeft="20dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnViewOportunidadeExcluir"
-            android:text="@string/btnViewOportunidadeExcluir"
-            android:onClick="deleteOportunidade"
-            android:layout_gravity="left"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnViewOportunidadeAtualizar"
-            android:text="@string/btnViewOportunidadeAtualizar"
-            android:onClick="updateOportunidade"
-            android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewOportunidadeFase"
+                        android:text="@string/txtViewOportunidadeFase"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/txtViewOportunidadeValueProxEtapa"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewOportunidadeValueFase"
+                        android:paddingLeft="20dp"
+                        android:layout_below="@+id/txtViewOportunidadeFase"/>
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewOportunidadeProbabilidade"
+                        android:text="@string/txtViewOportunidadeProbabilidade"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/txtViewOportunidadeValueFase"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewOportunidadeValueProbabilidade"
+                        android:paddingLeft="20dp"
+                        android:layout_below="@+id/txtViewOportunidadeProbabilidade"/>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:id="@+id/txtViewOportunidadeCampanha"
+                        android:text="@string/txtViewOportunidadeCampanha"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/txtViewOportunidadeValueProbabilidade"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtViewOportunidadeValueCampanha"
+                        android:paddingLeft="20dp"
+                        android:layout_below="@+id/txtViewOportunidadeCampanha"/>
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
         </LinearLayout>
-</LinearLayout>
+    </LinearLayout>
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/menu_red"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        fab:menu_labels_ellipsize="end"
+        fab:menu_labels_singleLine="true"
+        fab:menu_backgroundColor="@color/transp"
+        fab:menu_fab_label="Menu de lead">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add"
+            fab:fab_size="mini"
+            fab:fab_label="Editar" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add"
+            fab:fab_size="mini"
+            fab:fab_label="Excluir" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+</android.support.design.widget.CoordinatorLayout>
+

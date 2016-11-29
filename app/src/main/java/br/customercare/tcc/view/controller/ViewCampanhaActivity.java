@@ -14,7 +14,7 @@ import java.util.concurrent.ExecutionException;
 import br.customercare.tcc.R;
 import br.customercare.tcc.util.campanha.ConsultOneCampanha;
 
-public class ViewCampanhaActivity extends AppCompatActivity {
+public class ViewCampanhaActivity extends BaseDrawerActivity {
 
     private Campaign[] campanha = new Campaign[1];
 
@@ -28,8 +28,8 @@ public class ViewCampanhaActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_campanha);
-
+        //setContentView(R.layout.activity_view_campanha);
+        getLayoutInflater().inflate(R.layout.activity_view_campanha, frameLayout);
         textOwnerCampanha = (TextView)findViewById(R.id.txtViewCampanhaValueProprietario);
         textNome = (TextView)findViewById(R.id.txtViewCampanhaValueNome);
         chkAtivo = (CheckBox)findViewById(R.id.chkViewCampanhaValueAtivo);
