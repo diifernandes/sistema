@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    tools:context=".view.controller.InsertLeadActivity">
+
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.controller.InsertLeadActivity">
+    android:layout_marginTop="50dp"
+    >
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -17,95 +26,102 @@
 
         <EditText
             android:id="@+id/edtInsLeadNome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:hint="@string/edtInsLeadNome"
             android:layout_gravity="left"/>
 
         <EditText
             android:id="@+id/edtInsLeadSobrenome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:hint="@string/edtInsLeadSobrenome"
             android:layout_gravity="left"/>
 
         <EditText
             android:id="@+id/edtInsLeadEmpresa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:hint="@string/edtInsLeadEmpresa"
             android:layout_gravity="left"/>
 
         <EditText
             android:id="@+id/edtInsLeadOrigem"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:hint="@string/edtInsLeadOrigem"
             android:layout_gravity="left"/>
 
         <EditText
             android:id="@+id/edtInsLeadSetor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:hint="@string/edtInsLeadSetor"
             android:layout_gravity="left"/>
 
         <EditText
             android:id="@+id/edtInsLeadReceita"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:hint="@string/edtInsLeadReceita"
             android:inputType="numberDecimal"
             android:layout_gravity="left"/>
 
         <EditText
             android:id="@+id/edtInsLeadTelefone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:hint="@string/edtInsLeadTelefone"
             android:inputType="number"
             android:layout_gravity="left"/>
 
         <EditText
             android:id="@+id/edtInsLeadEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:hint="@string/edtInsLeadEmail"
             android:layout_gravity="left"/>
 
         <Spinner
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/spiInsLeadStatus"
-            android:spinnerMode="dialog"/>
+            android:spinnerMode="dialog"
+            android:hint="@string/status_lead"/>
 
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/spiInsLeadClassificacao"
-            android:spinnerMode="dialog"/>
+            android:spinnerMode="dialog"
+            android:hint="@string/temperatura_lead"/>
 
         <EditText
             android:id="@+id/edtInsLeadFuncionarios"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:hint="@string/edtInsLeadFuncionarios"
             android:inputType="number"
             android:layout_gravity="left"/>
 
         <EditText
             android:id="@+id/edtInsLeadEndereco"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:hint="@string/edtInsLeadEndereco"
             android:layout_gravity="left"/>
 
         <Button
             android:id="@+id/btnInsLeadInsert"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:text="@string/btnInsLeadInsert"
             android:onClick="insertLead"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorPrimary"
+            android:layout_marginTop="20dp"
+            android:textColor="#FFFFFF"/>
     </LinearLayout>
 </ScrollView>
+
+</LinearLayout>

@@ -14,7 +14,7 @@ import br.customercare.tcc.R;
 import br.customercare.tcc.util.contatos.ConsultOneContact;
 import br.customercare.tcc.util.contatos.DeleteContact;
 
-public class ViewContatoActivity extends AppCompatActivity {
+public class ViewContatoActivity extends BaseDrawerActivity {
 
     TextView textProp, textNome, textConta, textTelefone, textCelular, textEmail, textTitulo;
     private Contact[] contact = new Contact[1];
@@ -23,8 +23,8 @@ public class ViewContatoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_contact);
-
+        //setContentView(R.layout.activity_view_contact);
+        getLayoutInflater().inflate(R.layout.activity_view_contact, frameLayout);
         textProp = (TextView)this.findViewById(R.id.txtViewContatoValuePropietario);
         textNome = (TextView)this.findViewById(R.id.txtViewContatoValueNome);
         textConta = (TextView)this.findViewById(R.id.txtViewContatoValueConta);

@@ -37,7 +37,7 @@ import br.customercare.tcc.util.tarefas.LeadsAdapter;
 import br.customercare.tcc.util.tarefas.MetricaAdapter;
 import br.customercare.tcc.util.tarefas.OportunidadeAdapter;
 
-public class InsertTarefasActivity extends AppCompatActivity {
+public class InsertTarefasActivity extends BaseDrawerActivity {
 
     private String[] statusNomes = new String[]{"Não iniciado","Em andamento", "Concluída",
             "Em espera", "Deferido"};
@@ -80,8 +80,8 @@ public class InsertTarefasActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_insert_tarefas);
-
+        //setContentView(R.layout.activity_insert_tarefas);
+        getLayoutInflater().inflate(R.layout.activity_insert_tarefas, frameLayout);
         adapterStatus = new ArrayAdapter<String>(this, R.layout.spinner_layout, R.id.text_spinner, statusNomes);
         adapterStatus.setDropDownViewResource(R.layout.spinner_layout);
 

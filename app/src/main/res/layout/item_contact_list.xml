@@ -12,8 +12,19 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="@string/txtListContatoNome" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/txtListContatoNome"
         android:text="@string/txtListContatoNome" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="@string/txtListContatoConta" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,7 +35,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="@string/txtListContatoTelefone" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/txtListContatoTelefone"
         android:text="@string/txtListContatoTelefone" />
+
 
 </LinearLayout>

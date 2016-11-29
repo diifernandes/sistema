@@ -23,7 +23,7 @@ import br.customercare.tcc.util.tarefas.ConsultNameOwnerTask;
 import br.customercare.tcc.util.tarefas.ConsultOneTarefa;
 import br.customercare.tcc.util.tarefas.DeleteTarefa;
 
-public class ViewTarefaActivity extends AppCompatActivity {
+public class ViewTarefaActivity extends BaseDrawerActivity {
 
     private String[] statusNomes = new String[]{"Não iniciado","Em andamento", "Concluída",
             "Em espera", "Deferido"};
@@ -49,8 +49,8 @@ public class ViewTarefaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_tarefa);
-
+        //setContentView(R.layout.activity_view_tarefa);
+        getLayoutInflater().inflate(R.layout.activity_view_tarefa, frameLayout);
         textOwnerTask = (TextView)findViewById(R.id.txtViewTarefaValueProprietario);
         textAssunto = (TextView)findViewById(R.id.txtViewTarefaValueAssunto);
         textDataVencimento = (TextView)findViewById(R.id.txtViewTarefaValueDataVencimento);

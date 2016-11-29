@@ -23,7 +23,7 @@ import br.customercare.tcc.util.metas.ConsultOneMetrica;
 import br.customercare.tcc.util.metas.ConsultOwnerMeta;
 import br.customercare.tcc.util.metas.DeleteMetrica;
 
-public class ViewMetricasActivity extends AppCompatActivity {
+public class ViewMetricasActivity extends BaseDrawerActivity {
 
     private String[] statusNomes = new String[]{"Não iniciado","Em andamento", "Atrasado", "Crítico", "Concluída",
             "Adiado", "Cancelado", "Não concluído"};
@@ -46,8 +46,8 @@ public class ViewMetricasActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_metricas);
-
+        //setContentView(R.layout.activity_view_metricas);
+        getLayoutInflater().inflate(R.layout.activity_view_metricas, frameLayout);
         principalLayout = (LinearLayout)findViewById(R.id.linearLayoutViewMetrica);
 
         textNome = (TextView)findViewById(R.id.txtViewMetricaValueNome);

@@ -69,7 +69,7 @@ public class TarefasListAdapter extends BaseAdapter {
         textAssunto.setText(tarefasList.get(position).getSubject());
         textDataVencimento.setText("");
         setDataVencimento(tarefasList.get(position).getActivityDate(), textDataVencimento);
-        textStatus.setText(tarefasList.get(position).getSubject());
+        textStatus.setText(tarefasList.get(position).getStatus());
         setColorPriority(tarefasList.get(position).getPriority(), linearLayoutTarefa);
 
         //Save product id to tag

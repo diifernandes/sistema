@@ -17,7 +17,7 @@ import br.customercare.tcc.util.vendas.ConsultOportunidades;
 /**
  * Created by JeanThomas on 06/11/2016.
  */
-public class VendasTotalOppActivity extends AppCompatActivity {
+public class VendasTotalOppActivity extends BaseDrawerActivity {
     PieChartL pieGraph;
     ArrayList<Opportunity> opportunities;
     float stageProspecting, stageQualification, stageProposal, stageNegotiation;
@@ -25,8 +25,8 @@ public class VendasTotalOppActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vendas_total_oportunidades);
-
+        //setContentView(R.layout.activity_vendas_total_oportunidades);
+        getLayoutInflater().inflate(R.layout.activity_vendas_total_oportunidades, frameLayout);
         opportunities = new ArrayList<Opportunity>();
         ConsultOportunidades consultOportunidades = new ConsultOportunidades(this);
 

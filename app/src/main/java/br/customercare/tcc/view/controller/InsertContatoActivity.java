@@ -17,14 +17,14 @@ import br.customercare.tcc.util.contatos.InsertContact;
 import br.customercare.tcc.util.leads.ConsultCompanyAccount;
 import com.sforce.soap.enterprise.sobject.Account;
 
-public class InsertContatoActivity extends AppCompatActivity {
+public class InsertContatoActivity extends BaseDrawerActivity {
     EditText editNome,editSobrenome, editConta, editTelefone, editCelular, editEmail, editTitulo;
     String idAccount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_insert_contact);
-
+        //setContentView(R.layout.activity_insert_contact);
+        getLayoutInflater().inflate(R.layout.activity_insert_contact, frameLayout);
         editNome = (EditText)findViewById(R.id.edtInsContatoNome);
         editSobrenome = (EditText)findViewById(R.id.edtInsContatoSobrenome);
         editConta = (EditText)findViewById(R.id.edtInsContatoConta);

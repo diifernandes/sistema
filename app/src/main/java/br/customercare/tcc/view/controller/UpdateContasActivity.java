@@ -16,7 +16,7 @@ import br.customercare.tcc.util.Mask;
 import br.customercare.tcc.util.conta.ConsultOneContas;
 import br.customercare.tcc.util.conta.UpdateContas;
 
-public class UpdateContasActivity extends AppCompatActivity {
+public class UpdateContasActivity extends BaseDrawerActivity {
 
     private String[] classificacaoValues = new String[]{"-- Nenhum --", "Hot", "Warm", "Cold"};
 
@@ -35,8 +35,8 @@ public class UpdateContasActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_update_contas);
-
+        //setContentView(R.layout.activity_update_contas);
+        getLayoutInflater().inflate(R.layout.activity_update_contas, frameLayout);
         adapterTipo = new ArrayAdapter<String>(this, R.layout.spinner_layout, R.id.text_spinner, tipoValues);
         adapterTipo.setDropDownViewResource(R.layout.spinner_layout);
 

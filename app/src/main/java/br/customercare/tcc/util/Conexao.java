@@ -15,7 +15,7 @@ public class Conexao {
     public static boolean conectaSF(String usuario, String senha){
         boolean success = false;
         String username = usuario;
-        String password = senha + "dsXgBQ7kRVequd3DJfNiVGMT";
+        String password = senha + "mmzVPWC7ZsOhiYadoBvhT6j5";
         String authEndPoint = "https://login.salesforce.com/services/Soap/c/37.0/";
 
             try {

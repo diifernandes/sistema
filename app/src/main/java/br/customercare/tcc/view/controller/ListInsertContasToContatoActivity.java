@@ -16,13 +16,13 @@ import br.customercare.tcc.R;
 import br.customercare.tcc.util.conta.ContasListAdapter;
 import br.customercare.tcc.util.conta.ListContas;
 
-public class ListInsertContasToContatoActivity extends AppCompatActivity {
+public class ListInsertContasToContatoActivity extends BaseDrawerActivity {
     String idConta = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contas_to_contato);
-
+        //setContentView(R.layout.activity_contas_to_contato);
+        getLayoutInflater().inflate(R.layout.activity_contas_to_contato, frameLayout);
         ListView lvContas = (ListView)findViewById(R.id.listView_contas);
 
         ArrayList<Account> contas = new ArrayList<Account>();

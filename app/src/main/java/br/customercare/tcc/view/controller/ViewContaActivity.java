@@ -14,7 +14,7 @@ import br.customercare.tcc.R;
 import br.customercare.tcc.util.conta.ConsultOneContas;
 import br.customercare.tcc.util.conta.DeleteConta;
 
-public class ViewContaActivity extends AppCompatActivity {
+public class ViewContaActivity extends BaseDrawerActivity {
 
     TextView textProp, textNome, textClassificao, textOrigem, textTelefone, textSetor, textTipo, textReceita, textFuncionarios, textEndereco;
     private Account[] conta = new Account[1];
@@ -23,8 +23,8 @@ public class ViewContaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_conta);
-
+       // setContentView(R.layout.activity_view_conta);
+        getLayoutInflater().inflate(R.layout.activity_view_conta, frameLayout);
         textProp = (TextView)findViewById(R.id.txtViewContaValuePropietario);
         textNome = (TextView)findViewById(R.id.txtViewContaValueNome);
         textClassificao = (TextView)findViewById(R.id.txtViewContaValueClassificao);

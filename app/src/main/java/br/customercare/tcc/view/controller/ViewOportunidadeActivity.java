@@ -16,7 +16,7 @@ import br.customercare.tcc.R;
 import br.customercare.tcc.util.oportunidades.ConsultOneOportunidade;
 import br.customercare.tcc.util.oportunidades.DeleteOportunidade;
 
-public class ViewOportunidadeActivity extends AppCompatActivity {
+public class ViewOportunidadeActivity extends BaseDrawerActivity {
 
     int diaFechamento, mesFechamento, anoFechamento;
 
@@ -28,8 +28,8 @@ public class ViewOportunidadeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_oportunidade);
-
+        //setContentView(R.layout.activity_view_oportunidade);
+        getLayoutInflater().inflate(R.layout.activity_view_oportunidade, frameLayout);
         textNome = (TextView)findViewById(R.id.txtViewOportunidadeValueNome);
         textConta = (TextView)findViewById(R.id.txtViewOportunidadeValueConta);
         textTipo = (TextView)findViewById(R.id.txtViewOportunidadeValueTipo);

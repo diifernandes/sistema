@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    tools:context=".view.controller.InsertTarefasActivity">
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.controller.InsertTarefasActivity">
+    android:layout_marginTop="50dp"
+    >
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -16,15 +24,15 @@
         android:id="@+id/linearLayoutInsTarefa">
 
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:id="@+id/edtInsTarefaAssunto"
             android:hint="@string/edtInsTarefaAssunto"
             android:layout_gravity="left"/>
 
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:id="@+id/edtInsTarefaDataVencimento"
             android:hint="@string/edtInsTarefaDataVencimento"
             android:inputType="number"
@@ -32,53 +40,58 @@
 
         <Spinner
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/spiInsTarefaPrioridade"
             android:spinnerMode="dialog"/>
 
         <Spinner
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/spiInsTarefaStatus"
             android:spinnerMode="dialog" />
 
         <Spinner
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/spiInsTarefaQuem"
             android:spinnerMode="dialog" />
 
         <Spinner
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/spiInsTarefaQuemNome"
             android:spinnerMode="dialog" />
 
         <Spinner
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/spiInsTarefaRelativo"
             android:spinnerMode="dialog" />
 
         <Spinner
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/spiInsTarefaRelativoObjeto"
             android:spinnerMode="dialog" />
 
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:id="@+id/edtInsTarefaComentario"
             android:hint="@string/edtInsTarefaComentarios"
             android:layout_gravity="left"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/btnInsTarefaInsert"
+          <Button
             android:id="@+id/btnInsTarefaInsert"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/btnInsTarefaInsert"
             android:onClick="insertTarefa"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorPrimary"
+            android:layout_marginTop="20dp"
+            android:textColor="#FFFFFF"/>
+
     </LinearLayout>
 </ScrollView>
+</LinearLayout>

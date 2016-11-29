@@ -18,7 +18,7 @@ import br.customercare.tcc.util.contatos.ConsultOneAccount;
 import br.customercare.tcc.util.contatos.ConsultOneContact;
 import br.customercare.tcc.util.contatos.UpdateContact;
 
-public class UpdateContactActivity extends AppCompatActivity {
+public class UpdateContactActivity extends BaseDrawerActivity {
     EditText editNome,editSobrenome, editConta, editTelefone, editCelular, editEmail, editTitulo;
     String idAccount, idContato;
     Account[] acc = new Account[1];
@@ -26,8 +26,8 @@ public class UpdateContactActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_update_contacts);
-
+        //setContentView(R.layout.activity_update_contacts);
+        getLayoutInflater().inflate(R.layout.activity_update_contacts, frameLayout);
         editNome = (EditText)findViewById(R.id.edtUpdContatoNome);
         editSobrenome = (EditText)findViewById(R.id.edtUpdContatoSobrenome);
         editConta = (EditText)findViewById(R.id.edtUpdContatoConta);

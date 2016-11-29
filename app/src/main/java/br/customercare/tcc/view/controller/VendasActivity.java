@@ -7,12 +7,13 @@ import android.view.View;
 
 import br.customercare.tcc.R;
 
-public class VendasActivity extends AppCompatActivity{
+public class VendasActivity extends BaseDrawerActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vendas);
+        //setContentView(R.layout.activity_vendas);
+        getLayoutInflater().inflate(R.layout.activity_vendas, frameLayout);
     }
 
     public void totalOportunidades(View view){

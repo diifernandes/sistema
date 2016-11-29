@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/loginbg"
+    android:background="#FFF"
     tools:showIn="@layout/activity_login"
     tools:context=".LoginActivity">
 
@@ -11,11 +11,11 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:src="@drawable/logo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="100dp"/>
 
 
     <LinearLayout
@@ -48,9 +48,9 @@
                 android:paddingLeft="10dp"
 
                 android:hint="@string/edit_login"
-                android:textColor="#fff"
+                android:textColor="@color/colorPrimary"
 
-                android:textColorHint="#fff"
+                android:textColorHint="@color/colorPrimary"
                 android:drawablePadding="10dp"
                 android:textSize="13dp"
                 />
@@ -84,8 +84,8 @@
                 android:paddingLeft="10dp"
                 android:hint="@string/edit_senha"
                 android:inputType="textPassword"
-                android:textColorHint="#fff"
-                android:textColor="#fff"
+                android:textColorHint="@color/colorPrimary"
+                android:textColor="@color/colorPrimary"
                 android:textSize="13dp"
                 android:layout_weight="1"
                 />
@@ -117,7 +117,7 @@
             android:orientation="horizontal"
             android:padding="16dp">
 
-            <custom_font.MyTextView
+            <!--<custom_font.MyTextView
                 android:id="@+id/create"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
@@ -130,7 +130,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/button_ajuda"
                 android:textColor="#FFF"
-                android:gravity="end"/>
+                android:gravity="end"/>-->
         </LinearLayout>
 
 
