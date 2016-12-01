@@ -136,11 +136,9 @@ public class MainMenuActivity extends AppCompatActivity implements NavigationVie
             Intent leadIntent = new Intent(this, VisitasActivity.class);
             startActivity(leadIntent);
         } else if (id == R.id.nav_ajustes) {
-            //
-        } else if (id == R.id.nav_feedback) {
-            //
-        } else if (id == R.id.nav_help) {
-            //
+            Intent leadIntent = new Intent(getApplicationContext(), ProfileScreenActivity.class);
+            startActivity(leadIntent);
+
         } else if (id == R.id.nav_logout) {
             LogoutSF logoutSF = new LogoutSF(this);
             logoutSF.execute();

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#0b1a51</color>
+    <color name="colorPrimary">#003f70</color>
+    <color name="colorPrimary2">#121735</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#04B4AE</color>
     <color name="textColor">#F3F3F3</color>
@@ -17,6 +18,8 @@
     <color name="cardview_initial_background">#71C3DE</color>
     <color name="transp">#00ffffff</color>
     <color name="bgGrey">#2f8e8e8e</color>
+    <color name="logoBlue">#003f70</color>
+
 
 
 

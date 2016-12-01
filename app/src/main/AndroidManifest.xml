@@ -149,6 +149,9 @@
         <activity android:name=".view.controller.ViewVisitaActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity android:name=".view.controller.ProfileScreenActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
 
     </application>
 

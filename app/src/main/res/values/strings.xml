@@ -490,6 +490,14 @@
     <string name="cardview_radius_seekbar_text">Radius</string>
     <string name="cardview_elevation_seekbar_text">Elevation</string>
     <string name="textContaContato">Selecione uma conta para associar o contato</string>
+    <string name="descSobre">Somos um grupo de desenvolvedores e amantes da tecnologia e inovação
+    e neste trabalho abordamos uma trajetória básica de como um CRM pode ajudar a solucionar
+        os problemas de nosso dia a dia, em frente a uma negociação com o cliente.
+        É fundamental lembrar de que 64% das perdas de clientes são devido a
+        falta de atenção e indiferença do vendedor e com o nosso aplicativo você
+        ficará fora dessa porcentagem e com certeza agregará muito valor ao seu
+        negócio.
+    </string>
 
 
 </resources>
