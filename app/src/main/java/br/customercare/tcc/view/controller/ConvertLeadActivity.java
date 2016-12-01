@@ -92,7 +92,13 @@ public class ConvertLeadActivity extends BaseDrawerActivity {
         String nameOpp = null;
         if(checkBox.isChecked() == false) {
             nameOpp = editOpportunity.getText().toString();
+            if(nameOpp.isEmpty()) {
+                Toast.makeText(this, "O(S) CAMPO(S): NOME DA OPORTUNIDADE É(SÃO) OBRIGATÓRIO(S)", Toast.LENGTH_LONG).show();
+            }else {
+                convertLead.execute(lead[0].getId(), idAcc, nameOpp);
+            }
+        }else {
+            convertLead.execute(lead[0].getId(), idAcc, nameOpp);
         }
-        convertLead.execute(lead[0].getId(), idAcc, nameOpp);
     }
 }

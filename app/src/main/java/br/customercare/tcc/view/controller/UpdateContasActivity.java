@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sforce.soap.enterprise.sobject.Account;
 import java.util.concurrent.ExecutionException;
@@ -119,19 +120,18 @@ public class UpdateContasActivity extends BaseDrawerActivity {
         }
 
 
-        editNome.setText(conta[0].getName());
-        editOrigem.setText(conta[0].getAccountSource());
-        editTelefone.setText(conta[0].getPhone());
-        editSetor.setText(conta[0].getIndustry());
-        editReceita.setText(Double.toString(conta[0].getAnnualRevenue()));
-        editFuncionarios.setText(Integer.toString(conta[0].getNumberOfEmployees()));
-        editEndereco.setText(conta[0].getBillingStreet());
+        if(conta[0].getName() != null)editNome.setText(conta[0].getName());
+        if(conta[0].getAccountSource() != null)editOrigem.setText(conta[0].getAccountSource());
+        if(conta[0].getPhone() != null)editTelefone.setText(conta[0].getPhone());
+        if(conta[0].getIndustry() != null)editSetor.setText(conta[0].getIndustry());
+        if(conta[0].getAnnualRevenue() != null)editReceita.setText(Double.toString(conta[0].getAnnualRevenue()));
+        if(conta[0].getNumberOfEmployees() != null)editFuncionarios.setText(Integer.toString(conta[0].getNumberOfEmployees()));
+        if(conta[0].getBillingStreet() != null)editEndereco.setText(conta[0].getBillingStreet());
 
 
     }
 
     public void updateConta(View view){
-        UpdateContas updateContas = new UpdateContas(this);
         String nome = editNome.getText().toString();
         String origem = editOrigem.getText().toString();
         String telefone = editTelefone.getText().toString();
@@ -139,6 +139,12 @@ public class UpdateContasActivity extends BaseDrawerActivity {
         String receita = editReceita.getText().toString();
         String funcionarios = editFuncionarios.getText().toString();
         String endereco = editEndereco.getText().toString();
-        updateContas.execute(idConta, nome, classificacaoSelected, origem, telefone, setor, tipoSelected, receita, funcionarios, endereco);
+        if(nome.isEmpty()) {
+            Toast.makeText(this, "O(S) CAMPO(S): NOME É(SÃO) OBRIGATÓRIO(S)", Toast.LENGTH_LONG).show();
+        }else{
+            UpdateContas updateContas = new UpdateContas(this);
+            updateContas.execute(idConta, nome, classificacaoSelected, origem, telefone, setor, tipoSelected, receita, funcionarios, endereco);
+        }
+
     }
 }

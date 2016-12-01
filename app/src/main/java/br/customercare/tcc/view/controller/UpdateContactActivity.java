@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sforce.soap.enterprise.sobject.Account;
 import com.sforce.soap.enterprise.sobject.Contact;
@@ -48,13 +49,13 @@ public class UpdateContactActivity extends BaseDrawerActivity {
         }
 
 
-        editNome.setText(contact[0].getFirstName(), TextView.BufferType.EDITABLE);
-        editSobrenome.setText(contact[0].getLastName(), TextView.BufferType.EDITABLE);
-        editConta.setText(contact[0].getAccount().getName(), TextView.BufferType.EDITABLE);
-        editTelefone.setText(contact[0].getPhone(), TextView.BufferType.EDITABLE);
-        editCelular.setText(contact[0].getMobilePhone(), TextView.BufferType.EDITABLE);
-        editEmail.setText(contact[0].getEmail(), TextView.BufferType.EDITABLE);
-        editTitulo.setText(contact[0].getTitle(), TextView.BufferType.EDITABLE);
+        if(contact[0].getFirstName() != null)editNome.setText(contact[0].getFirstName(), TextView.BufferType.EDITABLE);
+        if(contact[0].getLastName() != null)editSobrenome.setText(contact[0].getLastName(), TextView.BufferType.EDITABLE);
+        if(contact[0].getAccount().getName() != null)editConta.setText(contact[0].getAccount().getName(), TextView.BufferType.EDITABLE);
+        if(contact[0].getPhone() != null)editTelefone.setText(contact[0].getPhone(), TextView.BufferType.EDITABLE);
+        if(contact[0].getMobilePhone() != null)editCelular.setText(contact[0].getMobilePhone(), TextView.BufferType.EDITABLE);
+        if(contact[0].getEmail() != null)editEmail.setText(contact[0].getEmail(), TextView.BufferType.EDITABLE);
+        if(contact[0].getTitle() != null)editTitulo.setText(contact[0].getTitle(), TextView.BufferType.EDITABLE);
         idAccount = contact[0].getAccountId();
     }
 
@@ -80,13 +81,18 @@ public class UpdateContactActivity extends BaseDrawerActivity {
     }
 
     public void updateContato(View view){
-        UpdateContact updateContact = new UpdateContact(this);
         String nome = editNome.getText().toString();
         String sobrenome = editSobrenome.getText().toString();
         String telefone = editTelefone.getText().toString();
         String celular = editCelular.getText().toString();
         String email = editEmail.getText().toString();
         String titulo = editTitulo.getText().toString();
-        updateContact.execute(idContato, nome, sobrenome, idAccount, telefone, celular, email, titulo);
+        if(sobrenome.isEmpty()) {
+            Toast.makeText(this, "O(S) CAMPO(S): SOBRENOME É(SÃO) OBRIGATÓRIO(S)", Toast.LENGTH_LONG).show();
+        }else{
+            UpdateContact updateContact = new UpdateContact(this);
+            updateContact.execute(idContato, nome, sobrenome, idAccount, telefone, celular, email, titulo);
+        }
+
     }
 }

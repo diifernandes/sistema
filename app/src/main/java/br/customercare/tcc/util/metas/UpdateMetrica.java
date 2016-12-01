@@ -75,9 +75,15 @@ public class UpdateMetrica extends AsyncTask<String, String, Boolean> {
                 metric.setDueDate(dataVencimento);
                 metric.setStatus(params[5]);
                 metric.setDescription(params[11]);
-                metric.setCurrentValue(Double.parseDouble(params[8]));
-                metric.setInitialValue(Double.parseDouble(params[9]));
-                metric.setTargetValue(Double.parseDouble(params[10]));
+                if (!params[8].isEmpty() && params[8] != null ) {
+                    metric.setCurrentValue(Double.parseDouble(params[8]));
+                }
+                if (!params[9].isEmpty() && params[9] != null ) {
+                    metric.setInitialValue(Double.parseDouble(params[9]));
+                }
+                if (!params[10].isEmpty() && params[10] != null ) {
+                    metric.setTargetValue(Double.parseDouble(params[10]));
+                }
                 metric.setLastComment(params[12]);
             }else{
                 metric.setRecordTypeId(params[2]);

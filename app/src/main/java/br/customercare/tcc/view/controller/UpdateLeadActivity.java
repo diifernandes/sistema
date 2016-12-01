@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sforce.soap.enterprise.sobject.Lead;
 
@@ -22,7 +23,7 @@ import br.customercare.tcc.util.leads.UpdateLead;
 public class UpdateLeadActivity extends BaseDrawerActivity {
 
     private String[] classificacaoValues = new String[]{"-- Nenhum --", "Hot", "Warm", "Cold"};
-    private String[] statusValues = new String[]{"Open - Not Contacted", "Working - Contacted", "Closed - Converted", "Closed - Not Converted"};
+    private String[] statusValues = new String[]{"-- Nenhum --", "Open - Not Contacted", "Working - Contacted", "Closed - Converted", "Closed - Not Converted"};
 
     String statusSelected, classificacaoSelected, idLead;
     Spinner spinnerStatus, spinnerClassificacao;
@@ -42,22 +43,22 @@ public class UpdateLeadActivity extends BaseDrawerActivity {
         adapterClassificao = new ArrayAdapter<String>(this, R.layout.spinner_layout, R.id.text_spinner, classificacaoValues);
         adapterClassificao.setDropDownViewResource(R.layout.spinner_layout);
 
-        editNome = (EditText)findViewById(R.id.edtUpdLeadNome);
-        editSobrenome = (EditText)findViewById(R.id.edtUpdLeadSobrenome);
-        editEmpresa = (EditText)findViewById(R.id.edtUpdLeadEmpresa);
-        editOrigem = (EditText)findViewById(R.id.edtUpdLeadOrigem);
-        editSetor = (EditText)findViewById(R.id.edtUpdLeadSetor);
-        editReceita = (EditText)findViewById(R.id.edtUpdLeadReceita);
+        editNome = (EditText) findViewById(R.id.edtUpdLeadNome);
+        editSobrenome = (EditText) findViewById(R.id.edtUpdLeadSobrenome);
+        editEmpresa = (EditText) findViewById(R.id.edtUpdLeadEmpresa);
+        editOrigem = (EditText) findViewById(R.id.edtUpdLeadOrigem);
+        editSetor = (EditText) findViewById(R.id.edtUpdLeadSetor);
+        editReceita = (EditText) findViewById(R.id.edtUpdLeadReceita);
 
-        editTelefone = (EditText)findViewById(R.id.edtUpdLeadTelefone);
+        editTelefone = (EditText) findViewById(R.id.edtUpdLeadTelefone);
         editTelefone.addTextChangedListener(Mask.insert("(##)#########", editTelefone));
 
-        editEmail = (EditText)findViewById(R.id.edtUpdLeadEmail);
-        editFuncionarios = (EditText)findViewById(R.id.edtUpdLeadFuncionarios);
-        editEndereco = (EditText)findViewById(R.id.edtUpdLeadEndereco);
+        editEmail = (EditText) findViewById(R.id.edtUpdLeadEmail);
+        editFuncionarios = (EditText) findViewById(R.id.edtUpdLeadFuncionarios);
+        editEndereco = (EditText) findViewById(R.id.edtUpdLeadEndereco);
 
-        spinnerStatus = (Spinner)findViewById(R.id.spiUpdLeadStatus);
-        spinnerClassificacao = (Spinner)findViewById(R.id.spiUpdLeadClassificacao);
+        spinnerStatus = (Spinner) findViewById(R.id.spiUpdLeadStatus);
+        spinnerClassificacao = (Spinner) findViewById(R.id.spiUpdLeadClassificacao);
 
         idLead = getIntent().getStringExtra(LeadsActivity.EXTRA_ID);
         ConsultOneLead consultOneLead = new ConsultOneLead(this);
@@ -66,9 +67,9 @@ public class UpdateLeadActivity extends BaseDrawerActivity {
         spinnerStatus.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if(position == 0){
+                if (position == 0) {
                     statusSelected = null;
-                }else {
+                } else {
                     statusSelected = statusValues[position];
                 }
             }
@@ -82,9 +83,9 @@ public class UpdateLeadActivity extends BaseDrawerActivity {
         spinnerClassificacao.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if(position == 0){
+                if (position == 0) {
                     classificacaoSelected = null;
-                }else {
+                } else {
                     classificacaoSelected = classificacaoValues[position];
                 }
             }
@@ -100,41 +101,42 @@ public class UpdateLeadActivity extends BaseDrawerActivity {
             e.printStackTrace();
         }
 
-        for(int i = 0; i < statusValues.length; i++){
-            if(lead[0].getRating() !=  null) {
+        for (int i = 0; i < statusValues.length; i++) {
+            if (lead[0].getStatus() != null) {
                 if (lead[0].getStatus().equals(statusValues[i])) {
                     spinnerStatus.setSelection(i);
                 }
-            }else{
+            } else {
                 spinnerStatus.setSelection(0);
             }
         }
 
-        for(int i = 0; i < classificacaoValues.length; i++){
-            if(lead[0].getRating() !=  null) {
+        for (int i = 0; i < classificacaoValues.length; i++) {
+            if (lead[0].getRating() != null) {
                 if (lead[0].getRating().equals(classificacaoValues[i])) {
                     spinnerClassificacao.setSelection(i);
                 }
-            }else{
+            } else {
                 spinnerClassificacao.setSelection(0);
             }
         }
 
-        editNome.setText(lead[0].getFirstName());
-        editSobrenome.setText(lead[0].getLastName());
-        editEmpresa.setText(lead[0].getCompany());
-        editOrigem.setText(lead[0].getLeadSource());
-        editSetor.setText(lead[0].getIndustry());
-        editReceita.setText(Double.toString(lead[0].getAnnualRevenue()));
-        editTelefone.setText(lead[0].getPhone());
-        editEmail.setText(lead[0].getEmail());
-        editFuncionarios.setText(Integer.toString(lead[0].getNumberOfEmployees()));
-        editEndereco.setText(lead[0].getStreet());
-
+        if (lead[0].getFirstName() != null) editNome.setText(lead[0].getFirstName());
+        if (lead[0].getLastName() != null) editSobrenome.setText(lead[0].getLastName());
+        if (lead[0].getCompany() != null) editEmpresa.setText(lead[0].getCompany());
+        if (lead[0].getLeadSource() != null) editOrigem.setText(lead[0].getLeadSource());
+        if (lead[0].getIndustry() != null) editSetor.setText(lead[0].getIndustry());
+        if (lead[0].getAnnualRevenue() != null)
+            editReceita.setText(Double.toString(lead[0].getAnnualRevenue()));
+        if (lead[0].getPhone() != null) editTelefone.setText(lead[0].getPhone());
+        if (lead[0].getEmail() != null) editEmail.setText(lead[0].getEmail());
+        if (lead[0].getNumberOfEmployees() != null)
+            editFuncionarios.setText(Integer.toString(lead[0].getNumberOfEmployees()));
+        if (lead[0].getStreet() != null) editEndereco.setText(lead[0].getStreet());
     }
 
+
     public void updateLead(View view){
-        UpdateLead updateLead = new UpdateLead(this);
         String nome = editNome.getText().toString();
         String sobrenome = editSobrenome.getText().toString();
         String empresa = editEmpresa.getText().toString();
@@ -145,6 +147,12 @@ public class UpdateLeadActivity extends BaseDrawerActivity {
         String email = editEmail.getText().toString();
         String funcionarios = editFuncionarios.getText().toString();
         String endereco = editEndereco.getText().toString();
-        updateLead.execute(idLead, nome, sobrenome, empresa, origem, setor, receita, telefone, email, statusSelected, classificacaoSelected, funcionarios, endereco);
+        if(sobrenome.isEmpty() || empresa.isEmpty() || statusSelected == null) {
+            Toast.makeText(this, "O(S) CAMPO(S): SOBRENOME, EMPRESA E STATUS É(SÃO) OBRIGATÓRIO(S)", Toast.LENGTH_LONG).show();
+        }else{
+            UpdateLead updateLead = new UpdateLead(this);
+            updateLead.execute(idLead, nome, sobrenome, empresa, origem, setor, receita, telefone, email, statusSelected, classificacaoSelected, funcionarios, endereco);
+        }
+
     }
 }

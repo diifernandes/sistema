@@ -1,5 +1,7 @@
 package br.customercare.tcc.view.controller;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -18,6 +20,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import br.customercare.tcc.R;
+import br.customercare.tcc.util.leads.DeleteLead;
 import br.customercare.tcc.util.tarefas.ConsultNameCampanhaTask;
 import br.customercare.tcc.util.tarefas.ConsultNameContaTask;
 import br.customercare.tcc.util.tarefas.ConsultNameContactTask;
@@ -50,6 +53,7 @@ public class ViewTarefaActivity extends BaseDrawerActivity {
 
     private Task[] tarefa = new Task[1];
     public final static String EXTRA_ID = "br.customercare.tcc.view.controller.ID";
+    private AlertDialog.Builder alert;
     private FloatingActionMenu menuRed;
     private FloatingActionButton fab1;
     private FloatingActionButton fab2;
@@ -154,8 +158,23 @@ public class ViewTarefaActivity extends BaseDrawerActivity {
 
 
     public void deleteTarefa(View view){
-        DeleteTarefa deleteTarefa = new DeleteTarefa(this);
-        deleteTarefa.execute(tarefa[0].getId());
+        alert = new AlertDialog.Builder(this);
+        alert.setTitle("ATENÇÃO");
+        alert.setMessage("Tem certeza que deseja excluir este cadastro?");
+        alert.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                DeleteTarefa deleteTarefa = new DeleteTarefa(ViewTarefaActivity.this);
+                deleteTarefa.execute(tarefa[0].getId());
+            }
+        });
+        alert.setNeutralButton("Não", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        alert.create();
+        alert.show();
     }
 
     public void updateTarefa(View view){
@@ -168,10 +187,10 @@ public class ViewTarefaActivity extends BaseDrawerActivity {
 
     public void carregaValores(Task task){
         try{
-            textAssunto.setText(task.getSubject());
+            if(task.getSubject() != null)textAssunto.setText(task.getSubject());
             carregaData(task);
             carregaOwnerQuemRelativo(task);
-            textComentario.setText(task.getDescription());
+            if(task.getDescription() != null)textComentario.setText(task.getDescription());
         }catch (NullPointerException e){
 
         }
@@ -196,6 +215,7 @@ public class ViewTarefaActivity extends BaseDrawerActivity {
         String nameOwner = "";
         String nameQuem = "";
         String nameRelativo = "";
+        System.out.println(whoId + " | " + whatId + " | " + ownerId + " | CHECK");
         if(whoId.substring(0,3).equals("00Q")){
             ConsultNameLeadTask consultNameLeadTask = new ConsultNameLeadTask(this);
             ConsultNameOwnerTask consultNameOwnerTask = new ConsultNameOwnerTask(this);
@@ -207,7 +227,7 @@ public class ViewTarefaActivity extends BaseDrawerActivity {
             }
             textOwnerTask.setText(nameOwner);
             textNome.setText("Lead - " + nameQuem);
-            textRelativo.setText("");
+            textRelativo.setText("-----");
         }else if(whoId.substring(0,3).equals("003")){
             ConsultNameContactTask consultNameContactTask = new ConsultNameContactTask(this);
             ConsultNameOwnerTask consultNameOwnerTask = new ConsultNameOwnerTask(this);
@@ -215,7 +235,15 @@ public class ViewTarefaActivity extends BaseDrawerActivity {
                 ConsultNameCampanhaTask consultNameCampanhaTask = new ConsultNameCampanhaTask(this);
                 try {
                     nameOwner = consultNameOwnerTask.execute(ownerId).get();
+                } catch (InterruptedException | ExecutionException e) {
+                    e.printStackTrace();
+                }
+                try {
                     nameQuem = consultNameContactTask.execute(whoId).get();
+                } catch (InterruptedException | ExecutionException e) {
+                    e.printStackTrace();
+                }
+                try {
                     nameRelativo = consultNameCampanhaTask.execute(whatId).get();
                 } catch (InterruptedException | ExecutionException e) {
                     e.printStackTrace();
@@ -227,7 +255,15 @@ public class ViewTarefaActivity extends BaseDrawerActivity {
                 ConsultNameContaTask consultNameContaTask = new ConsultNameContaTask(this);
                 try {
                     nameOwner = consultNameOwnerTask.execute(ownerId).get();
+                } catch (InterruptedException | ExecutionException e) {
+                    e.printStackTrace();
+                }
+                try {
                     nameQuem = consultNameContactTask.execute(whoId).get();
+                } catch (InterruptedException | ExecutionException e) {
+                    e.printStackTrace();
+                }
+                try {
                     nameRelativo = consultNameContaTask.execute(whatId).get();
                 } catch (InterruptedException | ExecutionException e) {
                     e.printStackTrace();
@@ -239,7 +275,15 @@ public class ViewTarefaActivity extends BaseDrawerActivity {
                 ConsultNameMetricaTask consultNameMetricaTask = new ConsultNameMetricaTask(this);
                 try {
                     nameOwner = consultNameOwnerTask.execute(ownerId).get();
+                } catch (InterruptedException | ExecutionException e) {
+                    e.printStackTrace();
+                }
+                try {
                     nameQuem = consultNameContactTask.execute(whoId).get();
+                } catch (InterruptedException | ExecutionException e) {
+                    e.printStackTrace();
+                }
+                try {
                     nameRelativo = consultNameMetricaTask.execute(whatId).get();
                 } catch (InterruptedException | ExecutionException e) {
                     e.printStackTrace();
@@ -251,7 +295,15 @@ public class ViewTarefaActivity extends BaseDrawerActivity {
                 ConsultNameOportunidadeTask consultNameOportunidadeTask = new ConsultNameOportunidadeTask(this);
                 try {
                     nameOwner = consultNameOwnerTask.execute(ownerId).get();
+                } catch (InterruptedException | ExecutionException e) {
+                    e.printStackTrace();
+                }
+                try {
                     nameQuem = consultNameContactTask.execute(whoId).get();
+                } catch (InterruptedException | ExecutionException e) {
+                    e.printStackTrace();
+                }
+                try {
                     nameRelativo = consultNameOportunidadeTask.execute(whatId).get();
                 } catch (InterruptedException | ExecutionException e) {
                     e.printStackTrace();

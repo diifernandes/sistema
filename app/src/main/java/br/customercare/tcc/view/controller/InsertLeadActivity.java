@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import br.customercare.tcc.R;
 import br.customercare.tcc.util.Mask;
@@ -15,7 +16,7 @@ import br.customercare.tcc.util.leads.InsertLead;
 public class InsertLeadActivity extends BaseDrawerActivity {
 
     private String[] classificacaoValues = new String[]{"-- Nenhum --", "Hot", "Warm", "Cold"};
-    private String[] statusValues = new String[]{"Open - Not Contacted", "Working - Contacted", "Closed - Converted", "Closed - Not Converted"};
+    private String[] statusValues = new String[]{"-- Nenhum --", "Open - Not Contacted", "Working - Contacted", "Closed - Converted", "Closed - Not Converted"};
 
     String statusSelected, classificacaoSelected;
     Spinner spinnerStatus, spinnerClassificacao;
@@ -88,7 +89,6 @@ public class InsertLeadActivity extends BaseDrawerActivity {
     }
 
     public void insertLead(View view){
-        InsertLead insertLead = new InsertLead(this);
         String nome = editNome.getText().toString();
         String sobrenome = editSobrenome.getText().toString();
         String empresa = editEmpresa.getText().toString();
@@ -99,6 +99,11 @@ public class InsertLeadActivity extends BaseDrawerActivity {
         String email = editEmail.getText().toString();
         String funcionarios = editFuncionarios.getText().toString();
         String endereco = editEndereco.getText().toString();
-        insertLead.execute(nome, sobrenome, empresa, origem, setor, receita, telefone, email, statusSelected, classificacaoSelected, funcionarios, endereco);
+        if(sobrenome.isEmpty() || empresa.isEmpty() || statusSelected == null) {
+            Toast.makeText(this, "O(S) CAMPO(S): SOBRENOME, EMPRESA E STATUS É(SÃO) OBRIGATÓRIO(S)", Toast.LENGTH_LONG).show();
+        }else{
+            InsertLead insertLead = new InsertLead(this);
+            insertLead.execute(nome, sobrenome, empresa, origem, setor, receita, telefone, email, statusSelected, classificacaoSelected, funcionarios, endereco);
+        }
     }
 }

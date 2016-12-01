@@ -47,8 +47,12 @@ public class InsertConta extends AsyncTask<String, String, Boolean> {
         conta.setPhone(params[3]);
         conta.setIndustry(params[4]);
         conta.setType(params[5]);
-        conta.setAnnualRevenue(Double.parseDouble(params[6]));
-        conta.setNumberOfEmployees(Integer.parseInt(params[7]));
+        if (!params[6].isEmpty() && params[6] != null) {
+            conta.setAnnualRevenue(Double.parseDouble(params[6]));
+        }
+        if (!params[7].isEmpty() && params[7] != null) {
+            conta.setNumberOfEmployees(Integer.parseInt(params[7]));
+        }
         conta.setBillingStreet(params[8]);
 
         record[0] = conta ;

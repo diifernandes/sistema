@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sforce.soap.enterprise.sobject.Account;
 import com.sforce.soap.enterprise.sobject.Campaign;
@@ -226,11 +227,11 @@ public class UpdateOportunidadesActivity extends BaseDrawerActivity {
             }
         }
 
-        editNome.setText(opportunity[0].getName());
-        editValor.setText(Double.toString(opportunity[0].getAmount()));
+        if(opportunity[0].getName() != null)editNome.setText(opportunity[0].getName());
+        if(opportunity[0].getAmount() != null)editValor.setText(Double.toString(opportunity[0].getAmount()));
         carregaData();
-        editProxEtapa.setText(opportunity[0].getNextStep());
-        editProbabilidade.setText(Double.toString(opportunity[0].getProbability()));
+        if(opportunity[0].getNextStep() != null)editProxEtapa.setText(opportunity[0].getNextStep());
+        if(opportunity[0].getProbability() != null)editProbabilidade.setText(Double.toString(opportunity[0].getProbability()));
 
     }
 
@@ -248,13 +249,17 @@ public class UpdateOportunidadesActivity extends BaseDrawerActivity {
 
 
     public void updateOportunidade(View view){
-        UpdateOportunidade updateOportunidade = new UpdateOportunidade(this);
         String nome = editNome.getText().toString();
         String valor = editValor.getText().toString();
         String dataFechamento = editDataFechamento.getText().toString();
         String proxEtapa = editProxEtapa.getText().toString();
         String probabilidade = editProbabilidade.getText().toString();
-        updateOportunidade.execute(idOportunidade, nome, idConta, tipoSelected, leadSelected, valor, dataFechamento, proxEtapa, faseSelected, probabilidade, idCampanha);
+        if(nome.isEmpty() || dataFechamento.isEmpty() || faseSelected == null) {
+            Toast.makeText(this, "O(S) CAMPO(S): NOME, DATA DE FECHAMENTO E FASE É(SÃO) OBRIGATÓRIO(S)", Toast.LENGTH_LONG).show();
+        }else{
+            UpdateOportunidade updateOportunidade = new UpdateOportunidade(this);
+            updateOportunidade.execute(idOportunidade, nome, idConta, tipoSelected, leadSelected, valor, dataFechamento, proxEtapa, faseSelected, probabilidade, idCampanha);
+        }
     }
 
 }

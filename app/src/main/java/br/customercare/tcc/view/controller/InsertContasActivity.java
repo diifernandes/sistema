@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import br.customercare.tcc.R;
 import br.customercare.tcc.util.Mask;
@@ -84,10 +85,7 @@ public class InsertContasActivity extends BaseDrawerActivity {
 
     }
 
-
-    public void InsertConta(View view){
-        InsertConta insertconta = new InsertConta(this);
-
+    public void insertConta(View view){
         String nome = editNome.getText().toString();
         String origem = editOrigem.getText().toString();
         String telefone = editTelefone.getText().toString();
@@ -95,9 +93,12 @@ public class InsertContasActivity extends BaseDrawerActivity {
         String receita = editReceita.getText().toString();
         String funcionarios = editFuncionarios.getText().toString();
         String endereco = editEndereco.getText().toString();
-
-        insertconta.execute(nome, classificacaoSelected, origem, telefone, setor, tipoSelected, receita, funcionarios, endereco);
-
+        if(nome.isEmpty()) {
+            Toast.makeText(this, "O(S) CAMPO(S): NOME É(SÃO) OBRIGATÓRIO(S)", Toast.LENGTH_LONG).show();
+        }else{
+            InsertConta insertconta = new InsertConta(this);
+            insertconta.execute(nome, classificacaoSelected, origem, telefone, setor, tipoSelected, receita, funcionarios, endereco);
+        }
     }
 
 

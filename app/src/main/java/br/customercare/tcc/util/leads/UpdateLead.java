@@ -48,12 +48,16 @@ public class UpdateLead extends AsyncTask<String, String, Boolean> {
             lead.setCompany(params[3]);
             lead.setLeadSource(params[4]);
             lead.setIndustry(params[5]);
-            lead.setAnnualRevenue(Double.parseDouble(params[6]));
+            if (!params[6].isEmpty() && params[6] != null) {
+                lead.setAnnualRevenue(Double.parseDouble(params[6]));
+            }
             lead.setPhone(params[7]);
             lead.setEmail(params[8]);
             lead.setStatus(params[9]);
             lead.setRating(params[10]);
-            lead.setNumberOfEmployees(Integer.parseInt(params[11]));
+            if (!params[11].isEmpty() && params[11] != null) {
+                lead.setNumberOfEmployees(Integer.parseInt(params[11]));
+            }
             lead.setStreet(params[12]);
             record[0] = lead;
             SaveResult[] saveResult = Conexao.getConnection().update(record);

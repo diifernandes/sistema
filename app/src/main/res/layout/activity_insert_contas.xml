@@ -30,6 +30,10 @@
             android:hint="@string/edtInsContaNome"
             android:layout_gravity="left"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Classificação"/>
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -58,6 +62,10 @@
             android:hint="@string/edtInsContaSetor"
             android:layout_gravity="left"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Tipo"/>
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="match_parent"

@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sforce.soap.enterprise.sobject.Lead;
 import com.sforce.soap.enterprise.sobject.Contact;
@@ -267,11 +268,16 @@ public class InsertTarefasActivity extends BaseDrawerActivity {
     }
 
     public void insertTarefa(View view){
-        InsertTarefa insertTarefa = new InsertTarefa(this);
         String assunto = editAssunto.getText().toString();
         String dataVencimento = editDataVencimento.getText().toString();
         String comentario = editComentario.getText().toString();
-        insertTarefa.execute(assunto, dataVencimento, prioritySelected, statusSelected, idQuemNome, idRelativoObjeto, comentario);
+        if(assunto.isEmpty() || prioritySelected == null || statusSelected == null) {
+            Toast.makeText(this, "O(S) CAMPO(S): ASSUNTO, PRIORIDADE E STATUS É(SÃO) OBRIGATÓRIO(S)", Toast.LENGTH_LONG).show();
+        }else{
+            InsertTarefa insertTarefa = new InsertTarefa(this);
+            insertTarefa.execute(assunto, dataVencimento, prioritySelected, statusSelected, idQuemNome, idRelativoObjeto, comentario);
+        }
+
     }
 
 }

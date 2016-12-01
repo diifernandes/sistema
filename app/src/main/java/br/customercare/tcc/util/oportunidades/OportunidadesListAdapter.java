@@ -50,14 +50,16 @@ public class OportunidadesListAdapter extends BaseAdapter {
         TextView textFaseOportunidade = (TextView)v.findViewById(R.id.txtListOportunidadeFase);
 
         //Set text for TextView
-        try {
-            textNomeOportunidade.setText(oportunidadeList.get(position).getName());
-            textContaOportunidade.setText(oportunidadeList.get(position).getAccount().getName());
-            setDataVencimento(oportunidadeList.get(position).getCloseDate(), textDataFechamentoOportunidade);
-            textFaseOportunidade.setText(oportunidadeList.get(position).getStageName());
-        }catch (NullPointerException e){
 
+        if(oportunidadeList.get(position).getName() != null)textNomeOportunidade.setText(oportunidadeList.get(position).getName());
+        try{
+        textContaOportunidade.setText(oportunidadeList.get(position).getAccount().getName());
+        }catch (Exception e){
+            textContaOportunidade.setText("-----");
         }
+        if(oportunidadeList.get(position).getCloseDate() != null)setDataVencimento(oportunidadeList.get(position).getCloseDate(), textDataFechamentoOportunidade);
+        if(oportunidadeList.get(position).getStageName() != null)textFaseOportunidade.setText(oportunidadeList.get(position).getStageName());
+
 
         //Save product id to tag
         v.setTag(oportunidadeList.get(position).getId());

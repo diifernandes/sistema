@@ -26,6 +26,9 @@ import br.customercare.tcc.util.conta.DeleteConta;
 import br.customercare.tcc.util.metas.ConsultOneMetrica;
 import br.customercare.tcc.util.metas.ConsultOwnerMeta;
 import br.customercare.tcc.util.metas.DeleteMetrica;
+import br.customercare.tcc.util.leads.DeleteLead;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 
 public class ViewMetricasActivity extends BaseDrawerActivity {
 
@@ -36,6 +39,7 @@ public class ViewMetricasActivity extends BaseDrawerActivity {
             "Completed", "Postponed", "Canceled", "Not Completed"};
 
     String propMeta;
+    private AlertDialog.Builder alert;
 
     int diaInicio, mesInicio, anoInicio, diaVencimento, mesVencimento, anoVencimento;
 
@@ -161,8 +165,23 @@ public class ViewMetricasActivity extends BaseDrawerActivity {
         }
     };
     public void deleteMetrica(View view){
-        DeleteMetrica delMeta = new DeleteMetrica(this);
-        delMeta.execute(metrica[0].getId());
+        alert = new AlertDialog.Builder(this);
+        alert.setTitle("ATENÇÃO");
+        alert.setMessage("Tem certeza que deseja excluir este cadastro?");
+        alert.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                DeleteMetrica delMeta = new DeleteMetrica(ViewMetricasActivity.this);
+                delMeta.execute(metrica[0].getId());
+            }
+        });
+        alert.setNeutralButton("Não", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        alert.create();
+        alert.show();
     }
 
     public void updateMetrica(View view){
@@ -175,25 +194,17 @@ public class ViewMetricasActivity extends BaseDrawerActivity {
 
     public void carregaValores(String recordType){
         if(recordType.equals("Progress")){
-            try {
-                textNome.setText(metrica[0].getName());
-                textDescricao.setText(metrica[0].getDescription());
-                textComentario.setText(metrica[0].getLastComment());
-                textValorAtual.setText(metrica[0].getCurrentValue().toString());
-                textValorInicial.setText(metrica[0].getInitialValue().toString());
-                textValorDestino.setText(metrica[0].getTargetValue().toString());
-            }catch (NullPointerException e){
-
-            }
+            if(metrica[0].getName() != null)textNome.setText(metrica[0].getName());
+            if(metrica[0].getDescription() != null)textDescricao.setText(metrica[0].getDescription());
+            if(metrica[0].getLastComment() != null)textComentario.setText(metrica[0].getLastComment());
+            if(metrica[0].getCurrentValue() != null)textValorAtual.setText(metrica[0].getCurrentValue().toString());
+            if(metrica[0].getInitialValue() != null)textValorInicial.setText(metrica[0].getInitialValue().toString());
+            if(metrica[0].getTargetValue() != null)textValorDestino.setText(metrica[0].getTargetValue().toString());
             carregaDatas();
         }else{
-            try {
-                textNome.setText(metrica[0].getName());
-                textDescricao.setText(metrica[0].getDescription());
-                textComentario.setText(metrica[0].getLastComment());
-            }catch (NullPointerException e){
-
-            }
+            if(metrica[0].getName() != null)textNome.setText(metrica[0].getName());
+            if(metrica[0].getDescription() != null)textDescricao.setText(metrica[0].getDescription());
+            if(metrica[0].getLastComment() != null)textComentario.setText(metrica[0].getLastComment());
             carregaDatas();
         }
     }

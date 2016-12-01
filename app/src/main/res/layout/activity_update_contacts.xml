@@ -30,21 +30,21 @@
     <EditText
         android:id="@+id/edtUpdContatoNome"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:hint="@string/edtUpdContatoNome"
         android:layout_gravity="left"/>
 
     <EditText
         android:id="@+id/edtUpdContatoSobrenome"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:hint="@string/edtUpdContatoSobrenome"
         android:layout_gravity="left"/>
 
     <EditText
         android:id="@+id/edtUpdContatoConta"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:hint="@string/edtUpdContatoConta"
         android:onClick="listAccounts"
         android:layout_gravity="left"/>
@@ -52,7 +52,7 @@
     <EditText
         android:id="@+id/edtUpdContatoTelefone"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:hint="@string/edtUpdContatoTelefone"
         android:inputType="number"
         android:layout_gravity="left"/>
@@ -60,7 +60,7 @@
     <EditText
         android:id="@+id/edtUpdContatoCelular"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:hint="@string/edtUpdContatoCelular"
         android:inputType="number"
         android:layout_gravity="left"/>
@@ -68,27 +68,27 @@
     <EditText
         android:id="@+id/edtUpdContatoEmail"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:hint="@string/edtUpdContatoEmail"
         android:layout_gravity="left"/>
 
     <EditText
         android:id="@+id/edtUpdContatoTitulo"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:hint="@string/edtUpdContatoTitulo"
         android:layout_gravity="left"/>
 
-            <Button
-                android:id="@+id/btnUpdContatoAtualizar"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/btnUpdContatoUpdate"
-                android:onClick="updateContato"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/colorPrimary"
-                android:layout_marginTop="20dp"
-                android:textColor="#FFFFFF"/>
+    <Button
+        android:id="@+id/btnUpdContatoAtualizar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btnUpdContatoUpdate"
+        android:onClick="updateContato"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="20dp"
+        android:textColor="#FFFFFF"/>
 
 </LinearLayout>
     </ScrollView>

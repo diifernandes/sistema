@@ -1,5 +1,7 @@
 package br.customercare.tcc.view.controller;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -24,6 +26,7 @@ public class ViewLeadActivity extends BaseDrawerActivity {
     TextView textNome, textEmpresa, textOrigem, textSetor, textReceita, textTelefone,
             textEmail, textFuncionarios, textEndereco, textStatus, textClassificacao;
 
+    private AlertDialog.Builder alert;
     private FloatingActionMenu menuRed;
     private FloatingActionButton fab1;
     private FloatingActionButton fab2;
@@ -61,21 +64,18 @@ public class ViewLeadActivity extends BaseDrawerActivity {
             e.printStackTrace();
         }
 
-        try{
-            textNome.setText(lead[0].getName());
-            textEmpresa.setText(lead[0].getCompany());
-            textOrigem.setText(lead[0].getLeadSource());
-            textSetor.setText(lead[0].getIndustry());
-            textReceita.setText(Double.toString(lead[0].getAnnualRevenue()));
-            textTelefone.setText(lead[0].getPhone());
-            textEmail.setText(lead[0].getEmail());
-            textFuncionarios.setText(Integer.toString(lead[0].getNumberOfEmployees()));
-            textEndereco.setText(lead[0].getStreet());
-            textStatus.setText(lead[0].getStatus());
-            textClassificacao.setText(lead[0].getRating());
-        }catch (NullPointerException e) {
+        if(lead[0].getName() != null)textNome.setText(lead[0].getName());
+        if(lead[0].getCompany() != null)textEmpresa.setText(lead[0].getCompany());
+        if(lead[0].getLeadSource() != null)textOrigem.setText(lead[0].getLeadSource());
+        if(lead[0].getIndustry() != null)textSetor.setText(lead[0].getIndustry());
+        if(lead[0].getAnnualRevenue() != null)textReceita.setText(Double.toString(lead[0].getAnnualRevenue()));
+        if(lead[0].getPhone() != null)textTelefone.setText(lead[0].getPhone());
+        if(lead[0].getEmail() != null)textEmail.setText(lead[0].getEmail());
+        if(lead[0].getNumberOfEmployees() != null)textFuncionarios.setText(Integer.toString(lead[0].getNumberOfEmployees()));
+        if(lead[0].getStreet() != null)textEndereco.setText(lead[0].getStreet());
+        if(lead[0].getStatus() != null)textStatus.setText(lead[0].getStatus());
+        if(lead[0].getRating() != null)textClassificacao.setText(lead[0].getRating());
 
-        }
 
         menuRed = (FloatingActionMenu) findViewById(R.id.menu_red);
         fab1 = (FloatingActionButton) findViewById(R.id.fab1);
@@ -137,8 +137,22 @@ public class ViewLeadActivity extends BaseDrawerActivity {
 
 
     public void deleteLead(View view){
-        DeleteLead deleteLead = new DeleteLead(this);
-        deleteLead.execute(lead[0].getId());
+        alert = new AlertDialog.Builder(this);
+        alert.setTitle("ATENÇÃO");
+        alert.setMessage("Tem certeza que deseja excluir este cadastro?");
+        alert.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                DeleteLead deleteLead = new DeleteLead(ViewLeadActivity.this);
+                deleteLead.execute(lead[0].getId());
+            }
+        });
+        alert.setNeutralButton("Não", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {}
+        });
+        alert.create();
+        alert.show();
     }
 
     public void updateLead(View view){

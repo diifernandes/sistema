@@ -64,11 +64,15 @@ public class InsertOportunidade extends AsyncTask<String, String, Boolean> {
         opportunity.setAccountId(params[1]);
         opportunity.setType(params[2]);
         opportunity.setLeadSource(params[3]);
-        opportunity.setAmount(Double.parseDouble(params[4]));
+        if (!params[4].isEmpty() && params[4] != null) {
+            opportunity.setAmount(Double.parseDouble(params[4]));
+        }
         opportunity.setCloseDate(dataFechamento);
         opportunity.setNextStep(params[6]);
         opportunity.setStageName(params[7]);
-        opportunity.setProbability(Double.parseDouble(params[8]));
+        if (!params[8].isEmpty() && params[8] != null) {
+            opportunity.setProbability(Double.parseDouble(params[8]));
+        }
         opportunity.setCampaignId(params[9]);
 
         record[0] = opportunity;

@@ -71,9 +71,15 @@ public class InsertMetrica extends AsyncTask<String, String, Boolean> {
             metric.setDueDate(dataVencimento);
             metric.setStatus(params[4]);
             metric.setDescription(params[10]);
-            metric.setCurrentValue(Double.parseDouble(params[7]));
-            metric.setInitialValue(Double.parseDouble(params[8]));
-            metric.setTargetValue(Double.parseDouble(params[9]));
+            if (!params[7].isEmpty() && params[7] != null ) {
+                metric.setCurrentValue(Double.parseDouble(params[7]));
+            }
+            if (!params[8].isEmpty() && params[8] != null ) {
+                metric.setInitialValue(Double.parseDouble(params[8]));
+            }
+            if (!params[9].isEmpty() && params[9] != null ) {
+                metric.setTargetValue(Double.parseDouble(params[9]));
+            }
             metric.setLastComment(params[11]);
         }else{
             metric.setRecordTypeId(params[1]);

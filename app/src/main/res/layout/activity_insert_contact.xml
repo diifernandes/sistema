@@ -13,7 +13,7 @@
     <EditText
         android:id="@+id/edtInsContatoNome"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:hint="@string/edtInsContatoNome"
         android:layout_gravity="left"
         android:layout_marginTop="50dp"/>
@@ -21,14 +21,14 @@
     <EditText
         android:id="@+id/edtInsContatoSobrenome"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:hint="@string/edtInsContatoSobrenome"
         android:layout_gravity="left"/>
 
     <EditText
         android:id="@+id/edtInsContatoConta"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:hint="@string/edtInsContatoConta"
         android:onClick="listAccounts"
         android:layout_gravity="left"/>
@@ -36,7 +36,7 @@
     <EditText
         android:id="@+id/edtInsContatoTelefone"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:hint="@string/edtInsContatoTelefone"
         android:inputType="number"
         android:layout_gravity="left"/>
@@ -44,7 +44,7 @@
     <EditText
         android:id="@+id/edtInsContatoCelular"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:hint="@string/edtInsContatoCelular"
         android:inputType="number"
         android:layout_gravity="left"/>
@@ -52,21 +52,21 @@
     <EditText
         android:id="@+id/edtInsContatoEmail"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:hint="@string/edtInsContatoEmail"
         android:layout_gravity="left"/>
 
     <EditText
         android:id="@+id/edtInsContatoTitulo"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:hint="@string/edtInsContatoTitulo"
         android:layout_gravity="left"/>
 
     <Button
         android:id="@+id/btnInsContatoInserir"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/btnInsContatoInserir"
         android:onClick="insertContato"
         android:layout_gravity="center_horizontal"

@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
@@ -69,6 +70,8 @@ public class InsertMetricasActivity extends BaseDrawerActivity {
 
         editDescricao = (EditText)findViewById(R.id.edtInsMetricaDescricao);
         editComentario = (EditText)findViewById(R.id.edtInsMetricaComentario);
+
+        recordOption = "0";
 
         ConsultRecordTypeMeta consultRecordTypeMeta = new ConsultRecordTypeMeta(this);
         ConsultMetaAberta consultMetaAberta = new ConsultMetaAberta(this);
@@ -150,7 +153,6 @@ public class InsertMetricasActivity extends BaseDrawerActivity {
     }
 
     public void insertMetrica(View view){
-        InsertMetrica insertMetrica = new InsertMetrica(this);
         String nome = editNome.getText().toString();
         String dataInicio = editDataInicio.getText().toString();
         String dataVencimento = editDataVencimento.getText().toString();
@@ -159,7 +161,21 @@ public class InsertMetricasActivity extends BaseDrawerActivity {
         String valorDestino = editValorDestino.getText().toString();
         String descricao = editDescricao.getText().toString();
         String comentario = editComentario.getText().toString();
-        insertMetrica.execute(recordOption, idRecordType, nome ,idMeta, statusSelected, dataInicio, dataVencimento, valorAtual, valorInicial, valorDestino, descricao, comentario);
+        if(recordOption.equals("0")){
+            if(nome.isEmpty() || valorDestino.isEmpty() || statusSelected == null) {
+                Toast.makeText(this, "O(S) CAMPO(S): NOME, VALOR DE DESTINO E STATUS É(SÃO) OBRIGATÓRIO(S)", Toast.LENGTH_LONG).show();
+            }else{
+                InsertMetrica insertMetrica = new InsertMetrica(this);
+                insertMetrica.execute(recordOption, idRecordType, nome ,idMeta, statusSelected, dataInicio, dataVencimento, valorAtual, valorInicial, valorDestino, descricao, comentario);
+            }
+        }else if(recordOption.equals("1")){
+            if(nome.isEmpty() || statusSelected == null) {
+                Toast.makeText(this, "O(S) CAMPO(S): NOME E STATUS É(SÃO) OBRIGATÓRIO(S)", Toast.LENGTH_LONG).show();
+            }else{
+                InsertMetrica insertMetrica = new InsertMetrica(this);
+                insertMetrica.execute(recordOption, idRecordType, nome ,idMeta, statusSelected, dataInicio, dataVencimento, valorAtual, valorInicial, valorDestino, descricao, comentario);
+            }
+        }
     }
 
 }

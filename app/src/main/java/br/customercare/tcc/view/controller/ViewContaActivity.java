@@ -1,5 +1,7 @@
 package br.customercare.tcc.view.controller;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +20,7 @@ import java.util.concurrent.ExecutionException;
 import br.customercare.tcc.R;
 import br.customercare.tcc.util.conta.ConsultOneContas;
 import br.customercare.tcc.util.conta.DeleteConta;
+import br.customercare.tcc.util.leads.DeleteLead;
 
 public class ViewContaActivity extends BaseDrawerActivity {
 
@@ -25,6 +28,7 @@ public class ViewContaActivity extends BaseDrawerActivity {
     private Account[] conta = new Account[1];
     public final static String EXTRA_ID = "br.customercare.tcc.view.controller.ID";
 
+    private AlertDialog.Builder alert;
     private FloatingActionMenu menuRed;
     private FloatingActionButton fab1;
     private FloatingActionButton fab2;
@@ -57,18 +61,16 @@ public class ViewContaActivity extends BaseDrawerActivity {
             e.printStackTrace();
         }
 
-        try{
-            textProp.setText(conta[0].getOwner().getName());
-            textNome.setText(conta[0].getName());
-            textClassificao.setText(conta[0].getRating());
-            textOrigem.setText(conta[0].getAccountSource());
-            textTelefone.setText(conta[0].getPhone());
-            textSetor.setText(conta[0].getIndustry());
-            textTipo.setText(conta[0].getType());
-            textReceita.setText(Double.toString(conta[0].getAnnualRevenue()));
-            textFuncionarios.setText(Integer.toString(conta[0].getNumberOfEmployees()));
-            textEndereco.setText(conta[0].getBillingStreet());
-        }catch (NullPointerException e){}
+        if(conta[0].getOwner().getName() != null)textProp.setText(conta[0].getOwner().getName());
+        if(conta[0].getName() != null)textNome.setText(conta[0].getName());
+        if(conta[0].getRating() != null)textClassificao.setText(conta[0].getRating());
+        if(conta[0].getAccountSource() != null)textOrigem.setText(conta[0].getAccountSource());
+        if(conta[0].getPhone() != null)textTelefone.setText(conta[0].getPhone());
+        if(conta[0].getIndustry() != null)textSetor.setText(conta[0].getIndustry());
+        if(conta[0].getType() != null)textTipo.setText(conta[0].getType());
+        if(conta[0].getAnnualRevenue() != null)textReceita.setText(Double.toString(conta[0].getAnnualRevenue()));
+        if(conta[0].getNumberOfEmployees() != null)textFuncionarios.setText(Integer.toString(conta[0].getNumberOfEmployees()));
+        if(conta[0].getBillingStreet() != null)textEndereco.setText(conta[0].getBillingStreet());
 
 
     menuRed = (FloatingActionMenu) findViewById(R.id.menu_red);
@@ -128,8 +130,24 @@ public class ViewContaActivity extends BaseDrawerActivity {
     };
 
     public void deleteConta(View view){
-        DeleteConta deleteConta = new DeleteConta(this);
-        deleteConta.execute(conta[0].getId());
+        alert = new AlertDialog.Builder(this);
+        alert.setTitle("ATENÇÃO");
+        alert.setMessage("Tem certeza que deseja excluir este registro?");
+        alert.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                DeleteConta deleteConta = new DeleteConta(ViewContaActivity.this);
+                deleteConta.execute(conta[0].getId());
+            }
+        });
+        alert.setNeutralButton("Não", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        alert.create();
+        alert.show();
+
     }
 
     public void updateConta(View view){

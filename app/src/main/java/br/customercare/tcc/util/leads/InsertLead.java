@@ -36,23 +36,26 @@ public class InsertLead extends AsyncTask<String, String, Boolean> {
     protected Boolean doInBackground(String... params) {
         publishProgress("Executando operação...");
         boolean success = false;
-
-        Lead[] record = new Lead[1];
-        Lead lead = new Lead();
-        lead.setFirstName(params[0]);
-        lead.setLastName(params[1]);
-        lead.setCompany(params[2]);
-        lead.setLeadSource(params[3]);
-        lead.setIndustry(params[4]);
-        lead.setAnnualRevenue(Double.parseDouble(params[5]));
-        lead.setPhone(params[6]);
-        lead.setEmail(params[7]);
-        lead.setStatus(params[8]);
-        lead.setRating(params[9]);
-        lead.setNumberOfEmployees(Integer.parseInt(params[10]));
-        lead.setStreet(params[11]);
-        record[0] = lead ;
         try {
+            Lead[] record = new Lead[1];
+            Lead lead = new Lead();
+            lead.setFirstName(params[0]);
+            lead.setLastName(params[1]);
+            lead.setCompany(params[2]);
+            lead.setLeadSource(params[3]);
+            lead.setIndustry(params[4]);
+            if (!params[5].isEmpty() && params[5] != null) {
+                lead.setAnnualRevenue(Double.parseDouble(params[5]));
+            }
+            lead.setPhone(params[6]);
+            lead.setEmail(params[7]);
+            lead.setStatus(params[8]);
+            lead.setRating(params[9]);
+            if (!params[10].isEmpty() && params[10] != null ) {
+                lead.setNumberOfEmployees(Integer.parseInt(params[10]));
+            }
+            lead.setStreet(params[11]);
+            record[0] = lead ;
             Conexao.getConnection().create(record);
             success = true;
         } catch (ConnectionException e) {

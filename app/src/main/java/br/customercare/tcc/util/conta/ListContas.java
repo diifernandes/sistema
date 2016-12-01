@@ -30,7 +30,7 @@ public class ListContas extends AsyncTask<Void, String, ArrayList<Account>>{
     @Override
     protected ArrayList<Account> doInBackground(Void... params) {
         try {
-            QueryResult query = Conexao.getConnection().query("SELECT Id, Name, Owner.Name, Rating, AccountSource, Phone, Industry, Type, AnnualRevenue, NumberOfEmployees, BillingStreet FROM Account where Ownerid = '" + Conexao.getConnection().getUserInfo().getUserId() +"'");
+            QueryResult query = Conexao.getConnection().query("SELECT Id, Name, Owner.Name, Rating, AccountSource, Phone, Industry, Type, AnnualRevenue, NumberOfEmployees, BillingStreet FROM Account where Ownerid = '" + Conexao.getConnection().getUserInfo().getUserId() +"' ORDER BY CreatedDate DESC");
             if(query.getSize() > 0){
                 publishProgress("Carregando contas");
                 ArrayList contas = new ArrayList<Account>();

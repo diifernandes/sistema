@@ -48,8 +48,12 @@ public class UpdateContas extends AsyncTask<String, String, Boolean> {
             conta.setPhone(params[4]);
             conta.setIndustry(params[5]);
             conta.setType(params[6]);
-            conta.setAnnualRevenue(Double.parseDouble(params[7]));
-            conta.setNumberOfEmployees(Integer.parseInt(params[8]));
+            if (!params[7].isEmpty() && params[7] != null) {
+                conta.setAnnualRevenue(Double.parseDouble(params[7]));
+            }
+            if (!params[8].isEmpty() && params[8] != null) {
+                conta.setNumberOfEmployees(Integer.parseInt(params[8]));
+            }
             conta.setBillingStreet(params[9]);
             record[0] = conta;
             Conexao.getConnection().update(record);

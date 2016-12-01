@@ -97,7 +97,8 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/chkViewCampanhaValueAtivo"
                         android:paddingLeft="10dp"
-                        android:layout_below="@+id/txtViewCampanhaAtivo"/>
+                        android:layout_below="@+id/txtViewCampanhaAtivo"
+                        android:enabled="false"/>
 
 
                     <TextView

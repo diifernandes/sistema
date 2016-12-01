@@ -1,5 +1,7 @@
 package br.customercare.tcc.view.controller;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -18,12 +20,14 @@ import java.util.concurrent.ExecutionException;
 import br.customercare.tcc.R;
 import br.customercare.tcc.util.contatos.ConsultOneContact;
 import br.customercare.tcc.util.contatos.DeleteContact;
+import br.customercare.tcc.util.leads.DeleteLead;
 
 public class ViewContatoActivity extends BaseDrawerActivity {
 
     TextView textProp, textNome, textConta, textTelefone, textCelular, textEmail, textTitulo;
     private Contact[] contact = new Contact[1];
     public final static String EXTRA_ID = "br.customercare.tcc.view.controller.ID";
+    private AlertDialog.Builder alert;
     private FloatingActionMenu menuRed;
     private FloatingActionButton fab1;
     private FloatingActionButton fab2;
@@ -53,20 +57,17 @@ public class ViewContatoActivity extends BaseDrawerActivity {
             e.printStackTrace();
         }
 
-        try {
-            textProp.setText(contact[0].getOwner().getName());
-            textNome.setText(contact[0].getName());
-            textConta.setText(contact[0].getAccount().getName());
-            textTelefone.setText(contact[0].getPhone());
-            textCelular.setText(contact[0].getMobilePhone());
-            textEmail.setText(contact[0].getEmail());
-            textTitulo.setText(contact[0].getTitle());
-        }catch (NullPointerException e){}
+        if(contact[0].getOwner().getName() != null)textProp.setText(contact[0].getOwner().getName());
+        if(contact[0].getName() != null)textNome.setText(contact[0].getName());
+        if(contact[0].getAccount().getName() != null)textConta.setText(contact[0].getAccount().getName());
+        if(contact[0].getPhone() != null)textTelefone.setText(contact[0].getPhone());
+        if(contact[0].getMobilePhone() != null)textCelular.setText(contact[0].getMobilePhone());
+        if(contact[0].getEmail() != null)textEmail.setText(contact[0].getEmail());
+        if(contact[0].getTitle() != null)textTitulo.setText(contact[0].getTitle());
+
         menuRed = (FloatingActionMenu) findViewById(R.id.menu_red);
         fab1 = (FloatingActionButton) findViewById(R.id.fab1);
         fab2 = (FloatingActionButton) findViewById(R.id.fab2);
-
-
 
         fab1.setEnabled(true);
         fab2.setEnabled(true);
@@ -119,8 +120,24 @@ public class ViewContatoActivity extends BaseDrawerActivity {
     };
 
     public void deleteContact(View view){
-        DeleteContact deleteContact = new DeleteContact(this);
-        deleteContact.execute(contact[0].getId());
+        alert = new AlertDialog.Builder(this);
+        alert.setTitle("ATENÇÃO");
+        alert.setMessage("Tem certeza que deseja excluir este cadastro?");
+        alert.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                DeleteContact deleteContact = new DeleteContact(ViewContatoActivity.this);
+                deleteContact.execute(contact[0].getId());
+            }
+        });
+        alert.setNeutralButton("Não", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        alert.create();
+        alert.show();
+
     }
 
     public void updateContact(View view){

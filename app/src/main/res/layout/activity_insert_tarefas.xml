@@ -38,24 +38,41 @@
             android:inputType="number"
             android:layout_gravity="left"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Prioridade"/>
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/spiInsTarefaPrioridade"
             android:spinnerMode="dialog"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Status"/>
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/spiInsTarefaStatus"
             android:spinnerMode="dialog" />
 
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Objeto a ser relacionado "/>
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/spiInsTarefaQuem"
             android:spinnerMode="dialog" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Atribuido à"/>
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="match_parent"

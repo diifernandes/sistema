@@ -70,7 +70,6 @@ public class TarefasListAdapter extends BaseAdapter {
         textDataVencimento.setText("");
         setDataVencimento(tarefasList.get(position).getActivityDate(), textDataVencimento);
         textStatus.setText(tarefasList.get(position).getStatus());
-        setColorPriority(tarefasList.get(position).getPriority(), linearLayoutTarefa);
 
         //Save product id to tag
         v.setTag(tarefasList.get(position).getId());
@@ -87,16 +86,6 @@ public class TarefasListAdapter extends BaseAdapter {
             anoVencimento = dataVencimento.get(Calendar.YEAR);
 
             textDataVencimento.setText(new DecimalFormat("00").format(diaVencimento) + "/" + new DecimalFormat("00").format(mesVencimento) + "/" + new DecimalFormat("00").format(anoVencimento), TextView.BufferType.EDITABLE);
-        }
-    }
-
-    public void setColorPriority(String priority, LinearLayout linearLayout){
-        if(priority.equals("High")){
-            linearLayout.setBackgroundColor(Color.RED);
-        }else if(priority.equals("Normal")){
-            linearLayout.setBackgroundColor(Color.BLUE);
-        }else if(priority.equals("Low")){
-            linearLayout.setBackgroundColor(Color.GRAY);
         }
     }
 }

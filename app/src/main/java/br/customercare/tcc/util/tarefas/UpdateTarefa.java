@@ -62,7 +62,7 @@ public class UpdateTarefa extends AsyncTask<String, String, Boolean> {
             task.setActivityDate(dataVencimento);
             task.setPriority(params[3]);
             task.setStatus(params[4]);
-            if(params[5] != null) {
+            if(params[5] != null && !params[5].isEmpty()) {
                 task.setWhatId(params[5]);
             }
             task.setWhoId(params[6]);

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
@@ -58,13 +59,18 @@ public class InsertContatoActivity extends BaseDrawerActivity {
     }
 
     public void insertContato(View view){
-        InsertContact insertContact = new InsertContact(this);
         String nome = editNome.getText().toString();
         String sobrenome = editSobrenome.getText().toString();
         String telefone = editTelefone.getText().toString();
         String celular = editCelular.getText().toString();
         String email = editEmail.getText().toString();
         String titulo = editTitulo.getText().toString();
-        insertContact.execute(nome, sobrenome, idAccount, telefone, celular, email, titulo);
+        if(sobrenome.isEmpty()) {
+            Toast.makeText(this, "O(S) CAMPO(S): SOBRENOME É(SÃO) OBRIGATÓRIO(S)", Toast.LENGTH_LONG).show();
+        }else{
+            InsertContact insertContact = new InsertContact(this);
+            insertContact.execute(nome, sobrenome, idAccount, telefone, celular, email, titulo);
+        }
+
     }
 }

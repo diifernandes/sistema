@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 
 import com.sforce.soap.enterprise.sobject.Account;
@@ -174,13 +175,18 @@ public class InsertOportunidadesActivity extends BaseDrawerActivity {
     }
 
     public void insertOportunidade(View view){
-        InsertOportunidade insertOportunidade = new InsertOportunidade(this);
         String nome = editNome.getText().toString();
         String valor = editValor.getText().toString();
         String dataFechamento = editDataFechamento.getText().toString();
         String proxEtapa = editProxEtapa.getText().toString();
         String probabilidade = editProbabilidade.getText().toString();
-        insertOportunidade.execute(nome, idConta, tipoSelected, leadSelected, valor, dataFechamento, proxEtapa, faseSelected, probabilidade, idCampanha);
+        if(nome.isEmpty() || dataFechamento.isEmpty() || faseSelected == null) {
+            Toast.makeText(this, "O(S) CAMPO(S): NOME, DATA DE FECHAMENTO E FASE É(SÃO) OBRIGATÓRIO(S)", Toast.LENGTH_LONG).show();
+        }else{
+            InsertOportunidade insertOportunidade = new InsertOportunidade(this);
+            insertOportunidade.execute(nome, idConta, tipoSelected, leadSelected, valor, dataFechamento, proxEtapa, faseSelected, probabilidade, idCampanha);
+        }
+
     }
 
 }

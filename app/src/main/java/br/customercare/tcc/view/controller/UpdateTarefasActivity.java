@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sforce.soap.enterprise.sobject.Account;
 import com.sforce.soap.enterprise.sobject.Campaign;
@@ -244,9 +245,9 @@ public class UpdateTarefasActivity extends BaseDrawerActivity {
             }
         }
 
-        editAssunto.setText(task[0].getSubject());
+        if(task[0].getSubject() != null)editAssunto.setText(task[0].getSubject());
         carregaData();
-        editComentario.setText(task[0].getDescription());
+        if(task[0].getDescription() != null)editComentario.setText(task[0].getDescription());
         carregaQuem();
     }
 
@@ -366,12 +367,15 @@ public class UpdateTarefasActivity extends BaseDrawerActivity {
     }
 
     public void updateTarefa(View view){
-        UpdateTarefa updateTarefa = new UpdateTarefa(this);
         String assunto = editAssunto.getText().toString();
         String dataVencimento = editDataVencimento.getText().toString();
         String comentario = editComentario.getText().toString();
         String idTarefa = task[0].getId();
-        updateTarefa.execute(idTarefa, assunto, dataVencimento, prioritySelected, statusSelected, idRelativoObjeto, idQuemNome, comentario);
+        if(assunto.isEmpty() || prioritySelected == null || statusSelected == null) {
+            Toast.makeText(this, "O(S) CAMPO(S): ASSUNTO, PRIORIDADE E STATUS É(SÃO) OBRIGATÓRIO(S)", Toast.LENGTH_LONG).show();
+        }else{
+            UpdateTarefa updateTarefa = new UpdateTarefa(this);
+            updateTarefa.execute(idTarefa, assunto, dataVencimento, prioritySelected, statusSelected, idRelativoObjeto, idQuemNome, comentario);
+        }
     }
-
 }

@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sforce.soap.enterprise.sobject.Goal;
 import com.sforce.soap.enterprise.sobject.Metric;
@@ -26,6 +27,7 @@ import br.customercare.tcc.util.metas.ConsultMetaAberta;
 import br.customercare.tcc.util.metas.ConsultOneMetrica;
 import br.customercare.tcc.util.metas.ConsultRecordTypeMeta;
 import br.customercare.tcc.util.metas.GoalSpinnerAdapter;
+import br.customercare.tcc.util.metas.InsertMetrica;
 import br.customercare.tcc.util.metas.RecordSpinnerAdapter;
 import br.customercare.tcc.util.metas.UpdateMetrica;
 
@@ -162,7 +164,6 @@ public class UpdateMetricasActivity extends BaseDrawerActivity {
     }
 
     public void updateMetrica(View view){
-        UpdateMetrica updateMetrica = new UpdateMetrica(this);
         String nome = editNome.getText().toString();
         String dataInicio = editDataInicio.getText().toString();
         String dataVencimento = editDataVencimento.getText().toString();
@@ -172,7 +173,22 @@ public class UpdateMetricasActivity extends BaseDrawerActivity {
         String descricao = editDescricao.getText().toString();
         String comentario = editComentario.getText().toString();
         String idMetrica = metrica[0].getId();
-        updateMetrica.execute(idMetrica, recordOption, idRecordType, nome ,idMeta, statusSelected, dataInicio, dataVencimento, valorAtual, valorInicial, valorDestino, descricao, comentario);
+        if(recordOption == "0"){
+            if(nome.isEmpty() || valorDestino.isEmpty() || statusSelected == null) {
+                Toast.makeText(this, "O(S) CAMPO(S): NOME, VALOR DE DESTINO E STATUS É(SÃO) OBRIGATÓRIO(S)", Toast.LENGTH_LONG).show();
+            }else{
+                UpdateMetrica updateMetrica = new UpdateMetrica(this);
+                updateMetrica.execute(idMetrica, recordOption, idRecordType, nome ,idMeta, statusSelected, dataInicio, dataVencimento, valorAtual, valorInicial, valorDestino, descricao, comentario);
+            }
+        }else{
+            if(nome.isEmpty() || statusSelected == null) {
+                Toast.makeText(this, "O(S) CAMPO(S): NOME E STATUS É(SÃO) OBRIGATÓRIO(S)", Toast.LENGTH_LONG).show();
+            }else{
+                UpdateMetrica updateMetrica = new UpdateMetrica(this);
+                updateMetrica.execute(idMetrica, recordOption, idRecordType, nome ,idMeta, statusSelected, dataInicio, dataVencimento, valorAtual, valorInicial, valorDestino, descricao, comentario);
+            }
+        }
+
     }
 
     public void manipulaData(){
@@ -210,16 +226,12 @@ public class UpdateMetricasActivity extends BaseDrawerActivity {
             principalLayout.addView(editValorDestino);
             principalLayout.addView(editComentario);
             /*Carrega Valores*/
-            try{
-                editNome.setText(metrica[0].getName(), TextView.BufferType.EDITABLE);
-                editDescricao.setText(metrica[0].getDescription(), TextView.BufferType.EDITABLE);
-                editComentario.setText(metrica[0].getLastComment(), TextView.BufferType.EDITABLE);
-                editValorAtual.setText(metrica[0].getCurrentValue().toString(), TextView.BufferType.EDITABLE);
-                editValorInicial.setText(metrica[0].getInitialValue().toString(), TextView.BufferType.EDITABLE);
-                editValorDestino.setText(metrica[0].getTargetValue().toString(), TextView.BufferType.EDITABLE);
-            } catch (NullPointerException e) {
-
-            }
+            if(metrica[0].getName() != null)editNome.setText(metrica[0].getName(), TextView.BufferType.EDITABLE);
+            if(metrica[0].getDescription() != null)editDescricao.setText(metrica[0].getDescription(), TextView.BufferType.EDITABLE);
+            if(metrica[0].getLastComment() != null)editComentario.setText(metrica[0].getLastComment(), TextView.BufferType.EDITABLE);
+            if(metrica[0].getCurrentValue() != null)editValorAtual.setText(metrica[0].getCurrentValue().toString(), TextView.BufferType.EDITABLE);
+            if(metrica[0].getInitialValue() != null)editValorInicial.setText(metrica[0].getInitialValue().toString(), TextView.BufferType.EDITABLE);
+            if(metrica[0].getTargetValue() != null)editValorDestino.setText(metrica[0].getTargetValue().toString(), TextView.BufferType.EDITABLE);
             manipulaData();
         }else{
             /*Monta os campos necessários*/
@@ -230,13 +242,9 @@ public class UpdateMetricasActivity extends BaseDrawerActivity {
             principalLayout.addView(editDescricao);
             principalLayout.addView(editComentario);
             /*Carrega Valores*/
-            try {
-                editNome.setText(metrica[0].getName(), TextView.BufferType.EDITABLE);
-                editDescricao.setText(metrica[0].getDescription(), TextView.BufferType.EDITABLE);
-                editComentario.setText(metrica[0].getLastComment(), TextView.BufferType.EDITABLE);
-            }catch (NullPointerException e){
-
-            }
+            if(metrica[0].getName() != null)editNome.setText(metrica[0].getName(), TextView.BufferType.EDITABLE);
+            if(metrica[0].getDescription() != null)editDescricao.setText(metrica[0].getDescription(), TextView.BufferType.EDITABLE);
+            if(metrica[0].getLastComment() != null)editComentario.setText(metrica[0].getLastComment(), TextView.BufferType.EDITABLE);
             manipulaData();
         }
     }

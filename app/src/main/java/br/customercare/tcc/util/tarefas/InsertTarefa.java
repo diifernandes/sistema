@@ -64,7 +64,7 @@ public class InsertTarefa extends AsyncTask<String, String, Boolean> {
         task.setPriority(params[2]);
         task.setStatus(params[3]);
         task.setWhoId(params[4]);
-        if(params[5] != null) {
+        if(params[5] != null && !params[5].isEmpty()) {
             task.setWhatId(params[5]);
         }
         task.setDescription(params[6]);

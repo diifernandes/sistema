@@ -1,5 +1,7 @@
 package br.customercare.tcc.view.controller;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -18,6 +20,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import br.customercare.tcc.R;
+import br.customercare.tcc.util.leads.DeleteLead;
 import br.customercare.tcc.util.oportunidades.ConsultOneOportunidade;
 import br.customercare.tcc.util.oportunidades.DeleteOportunidade;
 
@@ -29,6 +32,7 @@ public class ViewOportunidadeActivity extends BaseDrawerActivity {
 
     private Opportunity[] opportunity = new Opportunity[1];
     public final static String EXTRA_ID = "br.customercare.tcc.view.controller.ID";
+    private AlertDialog.Builder alert;
     private FloatingActionMenu menuRed;
     private FloatingActionButton fab1;
     private FloatingActionButton fab2;
@@ -62,7 +66,20 @@ public class ViewOportunidadeActivity extends BaseDrawerActivity {
         }
 
 
-        carregaValores(opportunity[0]);
+        if(opportunity[0].getName() != null)textNome.setText(opportunity[0].getName());
+        try{
+            if(opportunity[0].getAccount().getName() != null)textConta.setText(opportunity[0].getAccount().getName());
+        }catch (Exception e){}
+        if(opportunity[0].getType() != null)textTipo.setText(opportunity[0].getType());
+        if(opportunity[0].getLeadSource() != null)textLead.setText(opportunity[0].getLeadSource());
+        if(opportunity[0].getAmount() != null)textValor.setText(Double.toString(opportunity[0].getAmount()));
+        carregaData(opportunity[0]);
+        if(opportunity[0].getNextStep() != null)textProxEtapa.setText(opportunity[0].getNextStep());
+        if(opportunity[0].getStageName() != null)textFase.setText(opportunity[0].getStageName());
+        if(opportunity[0].getProbability() != null)textProbabilidade.setText(Double.toString(opportunity[0].getProbability()));
+        try{
+            textCamapanha.setText(opportunity[0].getCampaign().getName());
+        }catch (Exception e){}
 
         menuRed = (FloatingActionMenu) findViewById(R.id.menu_red);
         fab1 = (FloatingActionButton) findViewById(R.id.fab1);
@@ -122,8 +139,24 @@ public class ViewOportunidadeActivity extends BaseDrawerActivity {
 
 
     public void deleteOportunidade(View view){
-        DeleteOportunidade deleteOportunidade = new DeleteOportunidade(this);
-        deleteOportunidade.execute(opportunity[0].getId());
+        alert = new AlertDialog.Builder(this);
+        alert.setTitle("ATENÇÃO");
+        alert.setMessage("Tem certeza que deseja excluir este registro?");
+        alert.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                DeleteOportunidade deleteOportunidade = new DeleteOportunidade(ViewOportunidadeActivity.this);
+                deleteOportunidade.execute(opportunity[0].getId());
+            }
+        });
+        alert.setNeutralButton("Não", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        alert.create();
+        alert.show();
+
     }
 
     public void updateOportunidade(View view){
@@ -132,23 +165,6 @@ public class ViewOportunidadeActivity extends BaseDrawerActivity {
         intent.putExtra(EXTRA_ID, idOportunidade);
         startActivity(intent);
 
-    }
-
-    public void carregaValores(Opportunity opportunity){
-        try{
-            textNome.setText(opportunity.getName());
-            textConta.setText(opportunity.getAccount().getName());
-            textTipo.setText(opportunity.getType());
-            textLead.setText(opportunity.getLeadSource());
-            textValor.setText(Double.toString(opportunity.getAmount()));
-            carregaData(opportunity);
-            textProxEtapa.setText(opportunity.getNextStep());
-            textFase.setText(opportunity.getStageName());
-            textProbabilidade.setText(Double.toString(opportunity.getProbability()));
-            textCamapanha.setText(opportunity.getCampaign().getName());
-        }catch (NullPointerException e){
-
-        }
     }
 
     public void carregaData(Opportunity opportunity){

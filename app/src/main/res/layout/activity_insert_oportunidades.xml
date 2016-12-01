@@ -30,18 +30,30 @@
             android:hint="@string/edtInsOportunidadeNome"
             android:layout_gravity="left"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Conta"/>
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/spiInsOportunidadeConta"
             android:spinnerMode="dialog"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Tipo"/>
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/spiInsOportunidadeTipo"
             android:spinnerMode="dialog"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Origem do lead"/>
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -71,6 +83,10 @@
             android:hint="@string/edtInsOportunidadeProxEtapa"
             android:layout_gravity="left"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Fase"/>
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -85,6 +101,10 @@
             android:inputType="number"
             android:layout_gravity="left"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Campanha"/>
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="match_parent"

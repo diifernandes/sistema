@@ -64,11 +64,15 @@ public class UpdateOportunidade extends AsyncTask<String, String, Boolean> {
             opportunity.setAccountId(params[2]);
             opportunity.setType(params[3]);
             opportunity.setLeadSource(params[4]);
-            opportunity.setAmount(Double.parseDouble(params[5]));
+            if (!params[5].isEmpty() && params[5] != null) {
+                opportunity.setAmount(Double.parseDouble(params[5]));
+            }
             opportunity.setCloseDate(dataFechamento);
             opportunity.setNextStep(params[7]);
             opportunity.setStageName(params[8]);
-            opportunity.setProbability(Double.parseDouble(params[9]));
+            if (!params[9].isEmpty() && params[9] != null) {
+                opportunity.setProbability(Double.parseDouble(params[9]));
+            }
             opportunity.setCampaignId(params[10]);
             record[0] = opportunity;
 
